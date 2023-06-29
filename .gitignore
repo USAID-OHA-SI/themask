@@ -8,7 +8,6 @@
 .RData
 .Ruserdata
 #no data
-*.csv
 *.txt
 *.rds
 *.xlsx
@@ -23,3 +22,5 @@ AI/*
 GIS/*
 Images/*
 Graphics/*
+Data/*
+Dataout/*
