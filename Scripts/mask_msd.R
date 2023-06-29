@@ -198,4 +198,5 @@
   zip(str_replace(file.path("Dataout", output_filename), "txt", "zip"),
       file.path("Dataout", output_filename))
   
+  unlink(file.path("Dataout", output_filename))
   
