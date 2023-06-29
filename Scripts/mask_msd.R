@@ -11,10 +11,13 @@
   library(tidyverse)
   library(gagglr)
   library(glue)
+  library(googledrive)
 
 # GLOBAL VARIABLES --------------------------------------------------------
   
   get_metadata() #list of MSD metadata elements
+
+  path_gdrive <- as_id("1TNcPH49rGKJWXPoaYebY-4_KuwQhdogR")
 
 # FUNCTION - GENERATE UID -------------------------------------------------
 
@@ -192,11 +195,20 @@
     str_replace("FY.*(?=_20)", v_yr) %>% 
     str_replace("zip", "txt")
 
-  write_csv(df_lim_masked,
-            file.path("Dataout", output_filename))  
+  output_filepath <- file.path("Dataout", output_filename)
+  output_filepath_zip <- str_replace(output_filepath, "txt", "zip")
   
-  zip(str_replace(file.path("Dataout", output_filename), "txt", "zip"),
-      file.path("Dataout", output_filename))
+  write_csv(df_lim_masked, output_filepath)  
   
-  unlink(file.path("Dataout", output_filename))
+  zip(output_filepath_zip, output_filepath)
+  
+  #remove csv (keeping zipped file)
+  unlink(output_filepath)
+  
+  #push to Gdrive
+  drive_upload(output_filepath_zip,
+               path_gdrive,
+               name = basename(output_filepath),
+               overwrite = TRUE)
+  
   
