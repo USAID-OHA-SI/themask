@@ -4,7 +4,7 @@
 # REF ID:   20dd0da7 
 # LICENSE:  MIT
 # DATE:     2023-06-16
-# UPDATED:  2023-06-29
+# UPDATED:  2023-07-05
 
 # DEPENDENCIES ------------------------------------------------------------
   
@@ -198,7 +198,7 @@
   output_filepath <- file.path("Dataout", output_filename)
   output_filepath_zip <- str_replace(output_filepath, "txt", "zip")
   
-  write_csv(df_lim_masked, output_filepath)  
+  write_tsv(df_lim_masked, output_filepath)  
   
   zip(output_filepath_zip, output_filepath)
   
