@@ -266,3 +266,20 @@
                name = basename(output_subnat_filepath),
                overwrite = TRUE)
   
+  
+  #Upload mapping files
+  "Dataout/geo_map.csv" %>% 
+    drive_upload(.,
+                 path_gdrive,
+                 name = basename(.),
+                 type = "spreadsheet",
+                 overwrite = TRUE)
+  
+
+  "Dataout/mech_map.csv" %>% 
+    drive_upload(.,
+                 path_gdrive,
+                 name = basename(.),
+                 type = "spreadsheet",
+                 overwrite = TRUE)
+  
