@@ -4,7 +4,7 @@
 # REF ID:   20dd0da7 
 # LICENSE:  MIT
 # DATE:     2023-06-16
-# UPDATED:  2023-07-05
+# UPDATED:  2023-07-18
 
 # DEPENDENCIES ------------------------------------------------------------
   
@@ -39,6 +39,11 @@
   #PSNUxIM MSD
   df <- si_path() %>% 
     return_latest("PSNU_IM") %>% 
+    read_psd()   
+  
+  #NAT_SUBNAT MSD
+  df_subnat <- si_path() %>% 
+    return_latest("NAT_SUBNAT") %>% 
     read_psd()   
   
   #mapping table for MiLB names/geographies (munge_mask_names.R)
@@ -148,7 +153,10 @@
            mech_code_milb = paste0("0", mech_code_milb),
            across(c(mech_name_milb, prime_partner_name_milb),  ~ ifelse(mech_code %in% c("00000", "00001"), "Dedup", .)))
   
-
+  #export mapping table for reference
+  write_csv(df_milb_mechs, "Dataout/mech_map.csv", na = "")
+  
+  
 # MASK MECHANISMS ---------------------------------------------------------
 
   #join masked table onto dataset by mech_code
@@ -174,6 +182,35 @@
 # MASK YEAR ---------------------------------------------------------------
 
   df_lim_masked <- df_lim_masked %>% 
+    mutate(fiscal_year = fiscal_year + 37)
+  
+
+# MASK NAT_SUBNAT ---------------------------------------------------------
+
+  #subnset dataset to just geography and indicators of interest
+  df_subnat_lim <- df_subnat %>% 
+    filter(psnuuid %in% df_geo$psnuuid,
+           indicator %in% c("POP_EST", "PLHIV", "TX_CURR_SUBNAT"),
+           !is.na(targets))
+  
+  #join masked table onto dataset by psnuuid
+  df_subnat_lim_masked <- df_subnat_lim %>% 
+    left_join(df_geo_map %>% 
+                select(psnuuid, ends_with("milb")),
+              by = join_by(psnuuid))
+  
+  #remove columns of unmasked data and then remove suffix so df can be reordered
+  df_subnat_lim_masked <- df_subnat_lim_masked %>% 
+    select(-any_of(df_milb_geo %>% 
+                     rename_all(~str_remove(., "_milb")) %>% 
+                     names())) %>% 
+    rename_all(~str_remove(., "_milb"))
+  
+  #reorder new df to match original ordering
+  df_subnat_lim_masked <- df_subnat_lim_masked[, names(df_subnat_lim)]
+  
+  #mask year
+  df_subnat_lim_masked <- df_subnat_lim_masked %>% 
     mutate(fiscal_year = fiscal_year + 37)
   
 # EXPORT ------------------------------------------------------------------
@@ -211,4 +248,21 @@
                name = basename(output_filepath),
                overwrite = TRUE)
   
+  #repeat export for SUBNAT
+  #export
+  output_subnat_filepath <- str_replace(output_filepath, "PSNU_IM", "NAT_SUBNAT")
+  output_subnat_filepath_zip <- str_replace(output_filepath_zip, "PSNU_IM", "NAT_SUBNAT")
+  
+  write_tsv(df_subnat_lim_masked, output_subnat_filepath)  
+  
+  zip(output_subnat_filepath_zip, output_subnat_filepath)
+  
+  #remove csv (keeping zipped file)
+  unlink(output_subnat_filepath)
+  
+  #push to Gdrive
+  drive_upload(output_subnat_filepath_zip,
+               path_gdrive,
+               name = basename(output_subnat_filepath),
+               overwrite = TRUE)
   
