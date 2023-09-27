@@ -1,3 +1,5 @@
+## scrap masked names for use in dataset
+
 # DEPENDENCIES ------------------------------------------------------------
 
 library(tidyverse)
