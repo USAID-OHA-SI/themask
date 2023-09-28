@@ -4,7 +4,7 @@
 #' page and is used for masking geographic and partner information in PEPFAR's
 #' MER Structured Datasets (MSD).
 #'
-#' @format ## `milb_tbl`
+#' @format ## `milb`
 #' A data frame with 120 rows and 6 columns:
 #' \describe{
 #'   \item{division}{MLB Division (East, Central, West)}
@@ -15,4 +15,4 @@
 #'   \item{name}{MilB team name}
 #' }
 #' @source <https://en.wikipedia.org/wiki/Minor_League_Baseball>
-"milb_tbl"
+"milb"
