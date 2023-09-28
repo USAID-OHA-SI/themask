@@ -47,13 +47,8 @@ library(usethis)
   use_data(msk_psnuuid, internal = TRUE, overwrite = TRUE)
 
   #export OU list to compare new run against what is historically in there
-  msk_ous <- unique(df_geo$operatingunit)
-
-  #export PSNU list to compare new run against what is historically in there
-  msk_psnus <- df_geo %>%
-    unite(psnu, c(operatingunit, psnu)) %>%
-    pull(psnu)
+  msk_ouuids <- unique(df_geo$operatingunituid)
 
   #store internal datasets for testing
-  use_data(msk_psnuuid, msk_ous, msk_psnus, #ou_chk, psnus_chk,
+  use_data(msk_psnuuid, msk_ouuids,
            internal = TRUE, overwrite = TRUE)
