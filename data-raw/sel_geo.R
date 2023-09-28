@@ -9,6 +9,7 @@ library(usethis)
 # IMPORT -----------------------------------------------------------------
 
   #PSNUxIM MSD
+  #created with FY23Q3c MSD
   df <- si_path() %>%
     return_latest("PSNU_IM") %>%
     read_psd()
@@ -44,7 +45,6 @@ library(usethis)
 
   #export/store for subsetting PEPFAR dataset
   msk_psnuuid <- pull(df_geo)
-  use_data(msk_psnuuid, internal = TRUE, overwrite = TRUE)
 
   #export OU list to compare new run against what is historically in there
   msk_ouuids <- unique(df_geo$operatingunituid)

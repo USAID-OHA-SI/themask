@@ -1,5 +1,6 @@
 #' MiLB Information Table
 #'
+#' @description
 #' This table has been extracted from Wikipedia's Minor League Baseball (MiLB)
 #' page and is used for masking geographic and partner information in PEPFAR's
 #' MER Structured Datasets (MSD).
