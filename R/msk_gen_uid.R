@@ -11,7 +11,7 @@
 #' @examples
 #'  generate_uid()
 
-generate_uid <- function(codeSize=11){
+msk_gen_uid <- function(codeSize=11){
   #Generate a random seed
   runif(1)
   allowedLetters<-c(LETTERS,letters)
