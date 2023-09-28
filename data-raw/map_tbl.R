@@ -153,24 +153,9 @@ library(usethis)
                             team == "Wisconsin Timber Rattlers" ~ "Timber Rattlers",
                             team == "Worcester Red Sox" ~ "Red Sox",
                             TRUE ~ name)
-    )
+    ) %>%
+    select(-c(word_count, review, team))
 
-
-  #subset table for mapping and rename
-  milb_tbl <- df_milb %>%
-    select(snu1 = league,
-           psnu = city,
-           mech_name = name,
-           prime_partner_name = name)
-
-  #rename as mapping table
-  milb_tbl <- milb_tbl %>%
-    mutate(operatingunit = "Minoria",
-           country = "Minoria",
-           .before = 1) %>%
-    mutate(snu1 = str_remove(snu1, " League"),
-           mech_code = row_number() + 1000) %>%
-    rename_all(~glue("{.}_milb"))
 
 #store mapping table
   usethis::use_data(milb_tbl, overwrite = TRUE)
