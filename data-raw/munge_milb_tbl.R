@@ -153,9 +153,12 @@ library(usethis)
                             team == "Wisconsin Timber Rattlers" ~ "Timber Rattlers",
                             team == "Worcester Red Sox" ~ "Red Sox",
                             TRUE ~ name)
-    ) %>%
+    )
+
+  #clean up for storing
+  milb <- df_milb %>%
     select(-c(word_count, review, team))
 
 
 #store mapping table
-  usethis::use_data(milb_tbl, overwrite = TRUE)
+  usethis::use_data(milb, overwrite = TRUE)
