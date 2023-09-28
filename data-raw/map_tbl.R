@@ -1,4 +1,4 @@
-## scrap masked names for use in dataset
+## scrape masked names for use in dataset
 
 # DEPENDENCIES ------------------------------------------------------------
 

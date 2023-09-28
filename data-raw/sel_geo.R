@@ -1,0 +1,59 @@
+## develop list of countries + PSNUs to use
+
+# DEPENDENCIES ------------------------------------------------------------
+
+library(tidyverse)
+library(gagglr)
+library(usethis)
+
+# IMPORT -----------------------------------------------------------------
+
+  #PSNUxIM MSD
+  df <- si_path() %>%
+    return_latest("PSNU_IM") %>%
+    read_psd()
+
+# LIMIT GEOGRAPHY ---------------------------------------------------------
+
+  get_metadata()
+
+  #pull the four similarly sized, operating units based on their TX_CURR
+  v_ouuid <- df %>%
+    filter(fiscal_year == metadata$curr_fy,
+           indicator == "TX_CURR") %>%
+    pluck_totals() %>%
+    count(operatingunit, operatingunituid, wt = targets, sort = TRUE)  %>%
+    slice(6:9) %>%
+    pull(operatingunituid)
+
+  #select 4 similarly sized PSNUs from those OUs based on their TX_CURR
+  df_geo <- df %>%
+    filter(fiscal_year == metadata$curr_fy,
+           str_detect(psnu, "_Military", negate = TRUE),
+           operatingunituid %in% v_ouuid,
+           indicator == "TX_CURR") %>%
+    pluck_totals() %>%
+    count(operatingunit, operatingunituid, country, snu1, snu1uid, psnu, psnuuid, wt = targets, sort = TRUE) %>%
+    arrange(operatingunit, n) %>%
+    group_by(operatingunit) %>%
+    slice(6:9) %>%
+    ungroup() %>%
+    select(-n)
+
+# EXPORT ------------------------------------------------------------------
+
+  #export/store for subsetting PEPFAR dataset
+  msk_psnuuid <- pull(df_geo)
+  use_data(msk_psnuuid, internal = TRUE, overwrite = TRUE)
+
+  #export OU list to compare new run against what is historically in there
+  msk_ous <- unique(df_geo$operatingunit)
+
+  #export PSNU list to compare new run against what is historically in there
+  msk_psnus <- df_geo %>%
+    unite(psnu, c(operatingunit, psnu)) %>%
+    pull(psnu)
+
+  #store internal datasets for testing
+  use_data(msk_psnuuid, msk_ous, msk_psnus, #ou_chk, psnus_chk,
+           internal = TRUE, overwrite = TRUE)
