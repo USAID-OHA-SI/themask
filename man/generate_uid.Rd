@@ -9,6 +9,9 @@ generate_uid(codeSize = 11)
 \arguments{
 \item{codeSize}{character length for UID output (default = 11)}
 }
+\value{
+random alphanumeric string
+}
 \description{
 This function is used to create a unique ID (UID) to mimic the UIDs created
 and used by DATIM for the MER and other PEPFAR Structured Datasets.

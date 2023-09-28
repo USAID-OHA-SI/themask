@@ -5,7 +5,7 @@
 #'
 #' @param codeSize character length for UID output (default = 11)
 #'
-#' @return
+#' @return random alphanumeric string
 #' @export
 #'
 #' @examples
