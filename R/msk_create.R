@@ -17,8 +17,9 @@ msk_create <- function(filepath){
   df <- msk_hierarchy(df)
 
   #mask mechanisms
+  df <- msk_mech(df)
 
-  #mask year
+  #morph year
 
   #create filename for output
 

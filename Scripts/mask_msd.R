@@ -143,7 +143,7 @@
   df_milb_mechs <- tibble(mech_code = unique(df_lim_masked$mech_code),
          mech_code_milb = runif(length(unique(df_lim_masked$mech_code)), 1200, 1800) %>% round %>% as.character,
          mech_name_milb = sample(df_milb$name, length(unique(df_lim_masked$mech_code))),
-         prime_partner_name_milb = mech_name_milb)
+         prime_partner_name_milb = mecprime_partner_name_milbh_name_milb)
 
   #keep dedups
   df_milb_mechs <- df_milb_mechs %>%
@@ -151,7 +151,7 @@
                                   str_replace(mech_code, "0000", "000"),
                                   mech_code_milb),
            mech_code_milb = paste0("0", mech_code_milb),
-           across(c(mech_name_milb, prime_partner_name_milb),  ~ ifelse(mech_code %in% c("00000", "00001"), "Dedup", .)))
+           across(c(mech_name_milb, ),  ~ ifelse(mech_code %in% c("00000", "00001"), "Dedup", .)))
 
   #export mapping table for reference
   write_csv(df_milb_mechs, "Dataout/mech_map.csv", na = "")
