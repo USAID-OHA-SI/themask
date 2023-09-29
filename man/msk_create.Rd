@@ -7,7 +7,7 @@
 msk_create(filepath)
 }
 \arguments{
-\item{filepath}{path to the MSD file}
+\item{filepath}{path to the PSD file (PSNUxIM or NAT_SUBNAT)}
 }
 \value{
 dataframe with converted geography + mech info

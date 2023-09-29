@@ -11,5 +11,7 @@ msk_create <- function(filepath){
   df <- msk_import(filepath)
 
   #limit dataset to select PSNUs
+  df <- msk_subset(df)
+
 
 }

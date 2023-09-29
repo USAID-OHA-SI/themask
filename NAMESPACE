@@ -3,4 +3,5 @@
 export("%>%")
 export(msk_create)
 export(msk_gen_uid)
+export(msk_subset)
 importFrom(magrittr,"%>%")
