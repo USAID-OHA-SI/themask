@@ -13,5 +13,13 @@ msk_create <- function(filepath){
   #limit dataset to select PSNUs
   df <- msk_subset(df)
 
+  #mask hierarchy
+  df <- msk_hierarchy(df)
+
+  #mask mechanisms
+
+  #mask year
+
+  #create filename for output
 
 }
