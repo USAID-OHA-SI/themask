@@ -4,10 +4,12 @@
 \alias{msk_create}
 \title{Create the Masked Dataset}
 \usage{
-msk_create(filepath)
+msk_create(filepath, output_folder)
 }
 \arguments{
 \item{filepath}{path to the PSD file (PSNUxIM or NAT_SUBNAT)}
+
+\item{output_folder}{location where you want to store the new file}
 }
 \value{
 dataframe with converted geography + mech info

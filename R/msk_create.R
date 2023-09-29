@@ -1,11 +1,12 @@
 #' Create the Masked Dataset
 #'
 #' @param filepath path to the PSD file (PSNUxIM or NAT_SUBNAT)
+#' @param output_folder location where you want to store the new file
 #'
 #' @return dataframe with converted geography + mech info
 #' @export
 
-msk_create <- function(filepath){
+msk_create <- function(filepath, output_folder){
 
   #import PSD
   df <- msk_import(filepath)
@@ -20,7 +21,9 @@ msk_create <- function(filepath){
   df <- msk_mech(df)
 
   #morph year
+  df <- dplyr::mutate(df, fiscal_year = fiscal_year + 37)
 
-  #create filename for output
+  #export
+  msk_export(df, filepath, output_folder)
 
 }
