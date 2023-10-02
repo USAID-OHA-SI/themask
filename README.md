@@ -1,4 +1,9 @@
 ## themask <img src="man/figures/logo.png" align="right" height="120" alt="" />
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/USAID-OHA-SI/themask/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/USAID-OHA-SI/themask/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
+
 Masks and houses the PEPFAR MSD-style training dataset for testing/training
 
 ## Overview
