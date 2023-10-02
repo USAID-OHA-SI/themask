@@ -10,7 +10,7 @@
 #' @importFrom stats runif
 #'
 #' @examples
-#'  generate_uid()
+#'  msk_gen_uid()
 
 msk_gen_uid <- function(codeSize=11){
   #Generate a random seed

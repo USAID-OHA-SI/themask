@@ -17,5 +17,5 @@ This function is used to create a unique ID (UID) to mimic the UIDs created
 and used by DATIM for the MER and other PEPFAR Structured Datasets.
 }
 \examples{
- generate_uid()
+ msk_gen_uid()
 }
