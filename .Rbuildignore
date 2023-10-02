@@ -1,0 +1,11 @@
+^themask\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^Scripts
+^Data_public
+^Dataout
+^data-raw$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$

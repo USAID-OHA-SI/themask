@@ -1,0 +1,25 @@
+navbar:
+  structure:
+    left:
+    - intro
+    - reference
+    - articles
+    - tutorials
+    - news
+    right: github
+  components:
+    reference:
+      text: Reference
+      href: reference/index.html
+
+reference:
+- title: Functions
+  contents:
+  - '`msk_create`'
+  - '`msk_gen_uid`'
+
+- title: Data
+  contents:
+  - '`milb`'
+  - '`minoria_geo`'
+

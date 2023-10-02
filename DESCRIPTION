@@ -1,0 +1,36 @@
+Package: themask
+Title: Masks and houses the PEPFAR MSD-style training dataset for 
+    testing/training
+Version: 0.0.0.9000
+Authors@R: 
+    person("Aaron", "Chafetz", , "achafetz@usaid.gov", role = c("aut", "cre"))
+Description: This package creates and hosts a masked, dummy dataset that should 
+    be used for testing, training, and demoing instead of using actual PEPFAR 
+    data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    cli,
+    dplyr,
+    magrittr,
+    readr,
+    stats,
+    stringr,
+    tibble,
+    utils
+Remotes: 
+  USAID-OHA-SI/gagglr,
+  USAID-OHA-SI/gophr
+Depends: 
+    R (>= 2.10)
+LazyData: true
+Suggests: 
+    glue,
+    googledrive,
+    rlang (>= 1.0.0),
+    testthat (>= 3.0.0),
+    withr
+Config/testthat/edition: 3
+Config/testthat/parallel: true
