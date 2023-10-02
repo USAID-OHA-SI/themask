@@ -23,9 +23,13 @@ navbar:
       href: https://github.com/USAID-OHA-SI/themask/
 
 reference:
-- title: Functions
+- title: User Functions
   contents:
+  - '`msk_download`'
   - '`msk_create`'
+
+- title: Developer Functions
+  contents:
   - '`msk_gen_uid`'
   - '`msk_release`'
 
