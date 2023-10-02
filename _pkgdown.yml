@@ -19,6 +19,7 @@ reference:
   - '`msk_gen_uid`'
 
 - title: Data
+  contents:
   - '`milb`'
   - '`minoria_geo`'
 
