@@ -21,7 +21,7 @@ msk_create <- function(filepath, output_folder){
   df <- msk_mech(df)
 
   #morph year
-  df <- dplyr::mutate(df, fiscal_year = fiscal_year + 37)
+  df <- msk_year(df)
 
   #export
   msk_export(df, filepath, output_folder)
