@@ -7,7 +7,7 @@
 #' @keywords internal
 #'
 
-msk_import <- function(filepath, call = caller_env()){
+msk_import <- function(filepath){
 
   #import PSD
   df <- gophr::read_psd(filepath)
@@ -16,7 +16,6 @@ msk_import <- function(filepath, call = caller_env()){
   type <- gophr::identify_psd(df)
 
   if(type %in% c("MSD (PSNU_IM)", "MSD (NAT_SUBNAT)"))
-    cli::cli_abort("{.arg filepath} must refer to a PSNUxIM MSD or NAT_SUBNAT MSD",
-                   call = call)
+    cli::cli_abort("{.arg filepath} must refer to a PSNUxIM MSD or NAT_SUBNAT MSD")
   return(df)
 }

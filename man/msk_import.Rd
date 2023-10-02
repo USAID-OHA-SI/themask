@@ -4,7 +4,7 @@
 \alias{msk_import}
 \title{Import PSD to mask}
 \usage{
-msk_import(filepath, call = caller_env())
+msk_import(filepath)
 }
 \arguments{
 \item{filepath}{path to a PSD file, either a PSNUxIM or NAT_SUBNAT}
