@@ -11,7 +11,7 @@ msk_hierarchy <- function(df){
   msk_geo <- dplyr::bind_cols(psnuuid = msk_psnuuid, minoria_geo)
 
   #join masked table onto dataset by psnuuid
-  df_msk <- dplyr::left_join(df, msk_geo, by = join_by(psnuuid))
+  df_msk <- dplyr::left_join(df, msk_geo, by = dplyr::join_by(psnuuid))
 
   #remove columns of unmasked data and then remove suffix so df can be reordered
   df_msk <- df_msk %>%

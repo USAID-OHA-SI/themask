@@ -13,7 +13,7 @@ msk_mech <- function(df){
   #join masked table onto dataset by mech_code
   df_msk <- df_msk %>%
     dplyr::left_join(df_mech_map,
-                     by = join_by(mech_code))
+                     by = dplyr::join_by(mech_code))
 
   #remove columns of unmasked data and then remove suffix so df can be reordered
   df_msk <- df_msk %>%
