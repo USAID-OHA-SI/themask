@@ -5,3 +5,6 @@
 ^Data_public
 ^Dataout
 ^data-raw$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
