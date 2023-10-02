@@ -9,8 +9,11 @@
 
 msk_export <- function(df, filepath, output_folder){
 
-  if(!missing(output_folder)){
-    #create filename for output
+  #print dataset if not exported
+  if(missing(output_folder))
+    return(df)
+
+  #create filename for output
     output_filename <- msk_filename(df, filepath)
 
     output_filepath <- file.path(output_folder, output_filename)
@@ -27,7 +30,7 @@ msk_export <- function(df, filepath, output_folder){
     unlink(output_filepath)
 
     cli::cli_alert_success("You have output a new masked dataset in {.file {output_folder}}.")
-  }
+
 
 }
 
