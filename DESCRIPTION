@@ -22,6 +22,7 @@ Imports:
     utils
 Remotes: 
   USAID-OHA-SI/gagglr,
+  USAID-OHA-SI/glamr,
   USAID-OHA-SI/gophr
 Depends: 
     R (>= 2.10)
@@ -29,6 +30,7 @@ LazyData: true
 Suggests: 
     glue,
     googledrive,
+    piggyback,
     rlang (>= 1.0.0),
     testthat (>= 3.0.0),
     withr
