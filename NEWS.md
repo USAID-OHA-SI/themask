@@ -1,4 +1,4 @@
-# themask (development version)
+# themask 1.0.0
 * Create function, `msk_download` for user to download the data from the release [2023-10-02]
 * Create function, `msk_release` to upload a new masked dataset to its own release and to the latest folder by the package owner/maintainers [2023-10-02]
 * Store masked MSD dataset as a Github Release [2023-10-02] 

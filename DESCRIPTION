@@ -1,7 +1,7 @@
 Package: themask
 Title: Masks and houses the PEPFAR MSD-style training dataset for 
     testing/training
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person("Aaron", "Chafetz", , "achafetz@usaid.gov", role = c("aut", "cre"))
 Description: This package creates and hosts a masked, dummy dataset that should 
