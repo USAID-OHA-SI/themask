@@ -17,10 +17,14 @@ download completes (default = FALSE)}
 \description{
 This function download a masked dataset from GitHub
 (\href{https://github.com/USAID-OHA-SI/themask}{USAID-OHA-SI/themask}) for use in
-training or testing.
+training or testing. Recommend running \code{msk_available} to see what version
+is available to download.
 }
 \examples{
 \dontrun{
+#check available version
+msk_available()
+
 #download to your downloads folder
 msk_download("~/Downloads)
 }
@@ -28,4 +32,7 @@ msk_download("~/Downloads)
 #download an older version
 msk_download("~/Downloads, tag = "2023.06.27c")
 }
+}
+\references{
+msk_available
 }

@@ -25,6 +25,7 @@ navbar:
 reference:
 - title: User Functions
   contents:
+  - '`msk_available`'
   - '`msk_download`'
   - '`msk_create`'
 
