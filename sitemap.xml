@@ -31,6 +31,9 @@
     <loc>https://usaid-oha-si.github.io/themask/reference/msk_create.html</loc>
   </url>
   <url>
+    <loc>https://usaid-oha-si.github.io/themask/reference/msk_download.html</loc>
+  </url>
+  <url>
     <loc>https://usaid-oha-si.github.io/themask/reference/msk_export.html</loc>
   </url>
   <url>
@@ -50,6 +53,9 @@
   </url>
   <url>
     <loc>https://usaid-oha-si.github.io/themask/reference/msk_mech_map.html</loc>
+  </url>
+  <url>
+    <loc>https://usaid-oha-si.github.io/themask/reference/msk_release.html</loc>
   </url>
   <url>
     <loc>https://usaid-oha-si.github.io/themask/reference/msk_subset.html</loc>
