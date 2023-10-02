@@ -24,5 +24,15 @@ msk_subset <- function(df){
                                      "POP_EST", "PLHIV", "TX_CURR_SUBNAT"))
   }
 
+  if(type == "MSD (PSNU_IM)" && nrow(df_lim) == 0){
+    cli::cli_abort("The dataframe must contain the cascade indicator.
+                   The filter results in zero rows of data")
+  }
+
+  if(type == "MSD (NAT_SUBNAT)" && nrow(df_lim) == 0){
+    cli::cli_abort("The dataframe must contain the key indicators - POP_EST, PLHIV, TX_CURR_SUBNAT.
+                   The filter results in zero rows of data")
+  }
+
   return(df_lim)
 }
