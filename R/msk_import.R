@@ -15,7 +15,8 @@ msk_import <- function(filepath){
   #confirm MSD
   type <- gophr::identify_psd(df)
 
-  if(type %in% c("MSD (PSNU_IM)", "MSD (NAT_SUBNAT)"))
+  if(!type %in% c("MSD (PSNU_IM)", "MSD (NAT_SUBNAT)"))
     cli::cli_abort("{.arg filepath} must refer to a PSNUxIM MSD or NAT_SUBNAT MSD")
+
   return(df)
 }
