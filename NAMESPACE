@@ -2,7 +2,9 @@
 
 export("%>%")
 export(msk_create)
+export(msk_download)
 export(msk_gen_uid)
+export(msk_release)
 importFrom(magrittr,"%>%")
 importFrom(stats,runif)
 importFrom(utils,zip)

@@ -8,11 +8,7 @@ Masks and houses the PEPFAR MSD-style training dataset for testing/training
 
 ## Overview
 
-This repository houses the PEPFAR MSD-style training dataset to use for testing and public facing work. This is a masked, dummy dataset that should be used for testing, training, and demoing instead of using actual data. For more information on the MSD, check out the Users Guide and Data Dictionary on [PEPFAR Panorama](https://pepfar-panorama.org/) (found in the Downloads folder under MER) 
-
-The file can download from [USAID Google Drive](https://drive.google.com/drive/folders/1TNcPH49rGKJWXPoaYebY-4_KuwQhdogR).
-
-To use with R to access the dataset, you must have the `googledrive` package installed and we recommend reading our [Credential Management vignette](https://usaid-oha-si.github.io/glamr/articles/credential-management.html) from [glamr](https://usaid-oha-si.github.io/glamr/index.html).
+This repository houses the PEPFAR MSD-style training dataset to use for testing and public facing work. This is a masked, dummy dataset that should be used for testing, training, and demoing instead of using actual data. For more information on the MSD, check out the Users Guide and Data Dictionary on [PEPFAR Panorama](https://pepfar-panorama.org/) (found in the Downloads folder under MER).
 
 ## Installation
 

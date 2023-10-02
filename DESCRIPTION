@@ -1,7 +1,7 @@
 Package: themask
 Title: Masks and houses the PEPFAR MSD-style training dataset for 
     testing/training
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person("Aaron", "Chafetz", , "achafetz@usaid.gov", role = c("aut", "cre"))
 Description: This package creates and hosts a masked, dummy dataset that should 
@@ -15,6 +15,7 @@ Imports:
     cli,
     dplyr,
     magrittr,
+    piggyback,
     readr,
     stats,
     stringr,
@@ -22,6 +23,7 @@ Imports:
     utils
 Remotes: 
   USAID-OHA-SI/gagglr,
+  USAID-OHA-SI/glamr,
   USAID-OHA-SI/gophr
 Depends: 
     R (>= 2.10)

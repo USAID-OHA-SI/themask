@@ -9,6 +9,10 @@
 
 msk_import <- function(filepath){
 
+  #fill with default path to PSNUxIM if not provided
+  if(missing(filepath))
+    filepath <- glamr::si_path() %>% glamr::return_latest("PSNU_IM")
+
   #import PSD
   df <- gophr::read_psd(filepath)
 
