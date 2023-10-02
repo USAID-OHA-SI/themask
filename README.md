@@ -1,5 +1,4 @@
-
-# themask
+# themask <img src="man/figures/logo.png" align="right" height="120" alt="" />
 
 This repository houses the PEPFAR MSD-style training dataset to use for testing and public facing work. This is a masked, dummy dataset that should be used for testing, training, and demoing instead of using actual data. For more information on the MSD, check out the Users Guide and Data Dictionary on [PEPFAR Panorama](https://pepfar-panorama.org/) (found in the Downloads folder under MER) 
 
