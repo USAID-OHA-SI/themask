@@ -23,5 +23,5 @@ msk_hierarchy <- function(df){
   #reorder new df to match original ordering
   df_msk <- df_msk[, names(df)]
 
-  return(df)
+  return(df_msk)
 }
