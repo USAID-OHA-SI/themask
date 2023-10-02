@@ -11,7 +11,7 @@ msk_mech <- function(df){
   df_mech_map <- msk_mech_map(df)
 
   #join masked table onto dataset by mech_code
-  df_msk <- df_msk %>%
+  df_msk <- df %>%
     dplyr::left_join(df_mech_map,
                      by = dplyr::join_by(mech_code))
 
@@ -21,7 +21,7 @@ msk_mech <- function(df){
                             dplyr::select(-mech_code) %>%
                             dplyr::rename_all(~stringr::str_remove(., "_milb")) %>%
                             names())) %>%
-    dplyr::rename_all(~str_remove(., "_milb"))
+    dplyr::rename_all(~stringr::str_remove(., "_milb"))
 
   #reorder new df to match original ordering
   df_msk <- df_msk[, names(df)]
@@ -30,7 +30,7 @@ msk_mech <- function(df){
   df_msk <- df_msk %>%
     dplyr::select(-dplyr::matches("prime_partner_duns"),
                   -dplyr::matches("prime_partner_uei"),
-                  -dplyr::match("award_number"))
+                  -dplyr::matches("award_number"))
 
   return(df_msk)
 }
@@ -59,5 +59,5 @@ msk_mech_map <- function(df){
            mech_code_milb = paste0("0", mech_code_milb),
            dplyr::across(c(mech_name_milb, prime_partner_name_milb),  ~ ifelse(mech_code %in% c("00000", "00001"), "Dedup", .)))
 
-  return(df_msk)
+  return(df_milb_mechs)
 }
