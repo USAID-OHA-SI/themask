@@ -7,6 +7,7 @@
 #'
 #' @return random alphanumeric string
 #' @export
+#' @importFrom stats runif
 #'
 #' @examples
 #'  generate_uid()

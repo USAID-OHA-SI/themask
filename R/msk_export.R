@@ -5,6 +5,7 @@
 #' @param output_folder location where you want to store the new file
 #'
 #' @keywords internal
+#' @importFrom utils zip
 
 msk_export <- function(df, filepath, output_folder){
 
@@ -15,7 +16,7 @@ msk_export <- function(df, filepath, output_folder){
     output_filepath <- file.path(output_folder, output_filename)
     output_filepath_zip <- stringr::str_replace(output_filepath, "txt", "zip")
 
-    write_tsv(df, output_filepath)
+    readr::write_tsv(df, output_filepath)
 
     #zip txt file
     zip(output_filepath_zip, output_filepath)
@@ -50,9 +51,9 @@ msk_filename <- function(df, filepath){
   #export
   output_filename <- filepath %>%
     basename() %>%
-    str_replace("Structured_Dataset", "Structured_TRAINING_Dataset") %>%
-    str_replace("FY.*(?=_20)", v_yr) %>%
-    str_replace("zip", "txt")
+    stringr::str_replace("Structured_Dataset", "Structured_TRAINING_Dataset") %>%
+    stringr::str_replace("FY.*(?=_20)", v_yr) %>%
+    stringr::str_replace("zip", "txt")
 
   return(output_filename)
 }

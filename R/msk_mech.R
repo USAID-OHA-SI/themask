@@ -41,6 +41,7 @@ msk_mech <- function(df){
 #'
 #' @return df
 #' @keywords internal
+#' @importFrom stats runif
 
 msk_mech_map <- function(df){
   #create a new table of mech information to map onto dataset
@@ -53,7 +54,7 @@ msk_mech_map <- function(df){
   #keep dedups
   df_milb_mechs <- df_milb_mechs %>%
     dplyr::mutate(mech_code_milb = ifelse(mech_code %in% c("00000", "00001"),
-                                   str_replace(mech_code, "0000", "000"),
+                                   stringr::str_replace(mech_code, "0000", "000"),
                                    mech_code_milb),
            mech_code_milb = paste0("0", mech_code_milb),
            dplyr::across(c(mech_name_milb, prime_partner_name_milb),  ~ ifelse(mech_code %in% c("00000", "00001"), "Dedup", .)))
