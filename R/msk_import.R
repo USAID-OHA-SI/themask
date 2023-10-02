@@ -7,7 +7,7 @@
 #' @keywords internal
 #'
 
-msk_import <- function(filepath, call = caller_env()){
+msk_import <- function(filepath){
 
   #import PSD
   df <- gophr::read_psd(filepath)
