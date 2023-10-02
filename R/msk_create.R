@@ -1,5 +1,10 @@
 #' Create the Masked Dataset
 #'
+#' This function is used to create a masked dataset for use in testing and
+#' training. The data are subset to 16 PSNUs and masked across geographic and
+#' mechanism variables. Either the PSNUxIM or NAT_SUBNAT Structured Datasets
+#' can be masked.
+#'
 #' @param filepath path to the PSD file (PSNUxIM or NAT_SUBNAT)
 #' @param output_folder location where you want to store the new file
 #'
