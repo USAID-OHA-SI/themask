@@ -8,21 +8,24 @@
 
 msk_export <- function(df, filepath, output_folder){
 
-  #create filename for output
-  output_filename <- msk_filename(df, filepath)
+  if(!missing(output_folder)){
+    #create filename for output
+    output_filename <- msk_filename(df, filepath)
 
-  output_filepath <- file.path(output_folder, output_filename)
-  output_filepath_zip <- stringr::str_replace(output_filepath, "txt", "zip")
+    output_filepath <- file.path(output_folder, output_filename)
+    output_filepath_zip <- stringr::str_replace(output_filepath, "txt", "zip")
 
-  write_tsv(df, output_filepath)
+    write_tsv(df, output_filepath)
 
-  #zip txt file
-  zip(output_filepath_zip, output_filepath)
+    #zip txt file
+    zip(output_filepath_zip, output_filepath)
 
-  #remove csv (keeping zipped file)
-  unlink(output_filepath)
+    #remove csv (keeping zipped file)
+    unlink(output_filepath)
 
-  cli::cli_alert_success("You have output a new masked dataset.")
+    cli::cli_alert_success("You have output a new masked dataset.")
+  }
+
 }
 
 
