@@ -15,6 +15,7 @@ Imports:
     cli,
     dplyr,
     magrittr,
+    piggyback,
     readr,
     stats,
     stringr,
@@ -30,7 +31,6 @@ LazyData: true
 Suggests: 
     glue,
     googledrive,
-    piggyback,
     rlang (>= 1.0.0),
     testthat (>= 3.0.0),
     withr

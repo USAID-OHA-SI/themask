@@ -16,8 +16,6 @@
 
 msk_release <- function(filepath, output_folder){
 
-  glamr::package_check('piggyback')
-
   #fill with default path to PSNUxIM if not provided
   if(missing(filepath))
     filepath <- glamr::si_path() %>% glamr::return_latest("PSNU_IM")
