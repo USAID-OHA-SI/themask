@@ -6,10 +6,22 @@
 #' can be masked.
 #'
 #' @param filepath path to the PSD file (PSNUxIM or NAT_SUBNAT)
-#' @param output_folder location where you want to store the new file
+#' @param output_folder location where you want to store the new file (default =
+#'   does not export the data)
 #'
 #' @return dataframe with converted geography + mech info
 #' @export
+#' @examples \dontrun{
+#' #create a masked dataset
+#' library(glamr)
+#' library(themask)
+#'
+#' #store path to latest MSD
+#' path <- si_path() %>% return_latest("PSNU_IM")
+#'
+#' #create a masked dataset from the PSNUxIM MSD
+#' msk_create(path, "project1/data")
+#' }
 
 msk_create <- function(filepath, output_folder){
 

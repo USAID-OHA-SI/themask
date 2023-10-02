@@ -8,11 +8,34 @@
 #'
 #' @param filepath path to the PSD file (PSNUxIM or NAT_SUBNAT) or masked file
 #' @param output_folder location where you want to store the new file (default
-#'  stores to a temporary directory)
+#'  does not save the file)
 #'
 #' @return dataframe with converted geography + mech info
 #' @export
-
+#' @references msk_create
+#'
+#' @examples \dontrun{
+#' #create and upload a new release
+#' library(glamr)
+#' library(themask)
+#'
+#' #store path to latest MSD
+#' path <- si_path() %>% return_latest("PSNU_IM")
+#'
+#' #create a masked dataset from the PSNUxIM MSD
+#' msk_release(path, "project1/data")
+#' }
+#' \dontrun{
+#' #upload release from an existing masked dataset
+#' library(glamr)
+#' library(themask)
+#'
+#' #store path to masked dataset
+#' path_msk <- return_latest("project1/data","TRAINING")
+#'
+#' #create a masked dataset from the PSNUxIM MSD
+#' msk_release(path_msk)
+#' }
 
 msk_release <- function(filepath, output_folder){
 

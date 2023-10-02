@@ -10,7 +10,7 @@ msk_release(filepath, output_folder)
 \item{filepath}{path to the PSD file (PSNUxIM or NAT_SUBNAT) or masked file}
 
 \item{output_folder}{location where you want to store the new file (default
-stores to a temporary directory)}
+does not save the file)}
 }
 \value{
 dataframe with converted geography + mech info
@@ -21,4 +21,31 @@ This function is used to upload the new masked dataset to GitHub
 package developers use only. The data from \code{\link[=msk_created]{msk_created()}} are subset to
 16 PSNUs and masked across geographic and mechanism variables. Either the
 PSNUxIM or NAT_SUBNAT Structured Datasets can be masked.
+}
+\examples{
+\dontrun{
+#create and upload a new release
+library(glamr)
+library(themask)
+
+#store path to latest MSD
+path <- si_path() \%>\% return_latest("PSNU_IM")
+
+#create a masked dataset from the PSNUxIM MSD
+msk_release(path, "project1/data")
+}
+\dontrun{
+#upload release from an existing masked dataset
+library(glamr)
+library(themask)
+
+#store path to masked dataset
+path_msk <- return_latest("project1/data","TRAINING")
+
+#create a masked dataset from the PSNUxIM MSD
+msk_release(path_msk)
+}
+}
+\references{
+msk_create
 }
