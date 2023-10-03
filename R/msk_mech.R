@@ -7,6 +7,9 @@
 
 msk_mech <- function(df){
 
+  if(!"mech_code" %in% df)
+    return(df)
+
   #create mapping table
   df_mech_map <- msk_mech_map(df)
 
