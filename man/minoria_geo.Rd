@@ -9,13 +9,13 @@
 
 A data frame with 16 rows and 7 columns:
 \describe{
-\item{operatingunit_milb}{Operating Unit name (Minoria)}
-\item{operatingunituid_milb}{OU unique ID (Minoria)}
-\item{country_milb}{Country (Minoria)}
-\item{snu1_milb}{Sub-National Unit 1 level below national (from MiLB league)}
-\item{snu1uid_milb}{SNU1 unique ID}
-\item{psnu_milb}{Priority SNU (from MiLB city)}
-\item{psnu_milb}{PSNU unique ID}
+\item{operatingunit}{Operating Unit name (Minoria)}
+\item{operatingunituid}{OU unique ID (Minoria)}
+\item{country}{Country (Minoria)}
+\item{snu1}{Sub-National Unit 1 level below national (from MiLB league)}
+\item{snu1uid}{SNU1 unique ID}
+\item{psnu}{Priority SNU (from MiLB city)}
+\item{psnuuid}{PSNU unique ID}
 }
 }
 }
