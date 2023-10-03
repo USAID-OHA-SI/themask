@@ -4,6 +4,7 @@ Title: Masks and houses the PEPFAR MSD-style training dataset for
 Version: 1.0.0
 Authors@R: 
     person("Aaron", "Chafetz", , "achafetz@usaid.gov", role = c("aut", "cre"))
+    person("Tim", "Essam", , "tessam@usaid.gov", role = c("ctb"))
 Description: This package creates and hosts a masked, dummy dataset that should 
     be used for testing, training, and demoing instead of using actual PEPFAR 
     data.

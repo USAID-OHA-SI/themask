@@ -1,4 +1,5 @@
 # themask 1.0.0
+* Adjust `minoria_geo`, removing suffix from names (`_milb`) [2023-10-03]
 * Add in shape files to the package (and as releases) for use in mapping [2023-10-03]
 * Create function, `msk_available` for the user to check what masked version is available for download [2023-10-02]
 * Create function, `msk_download` for user to download the data from the release [2023-10-02]
