@@ -38,4 +38,7 @@ reference:
   contents:
   - '`milb`'
   - '`minoria_geo`'
+  - '`minoria_shp_psnu`'
+  - '`minoria_shp_snu1`'
+  - '`minoria_shp_ou`'
 

@@ -35,6 +35,61 @@
 #'   \item{snu1_milb}{Sub-National Unit 1 level below national (from MiLB league)}
 #'   \item{snu1uid_milb}{SNU1 unique ID}
 #'   \item{psnu_milb}{Priority SNU (from MiLB city)}
-#'   \item{psnu_milb}{PSNU unique ID}
+#'   \item{psnuuid_milb}{PSNU unique ID}
 #' }
 "minoria_geo"
+
+#' Minoria PSNU Shape File
+#'
+#' @description
+#' This dataset is the sf file for mapping (Kingdom of) Minoria by PSNU.
+#'
+#' @family shp
+#' @format ## `minoria_shp_psnu`
+#' A data frame with 16 rows and 8 columns:
+#' \describe{
+#'   \item{psnu}{Priority SNU (from MiLB city)}
+#'   \item{psnuuid}{PSNU unique ID}
+#'   \item{snu1}{Sub-National Unit 1 level below national (from MiLB league)}
+#'   \item{snu1uid}{SNU1 unique ID}
+#'   \item{operatingunit}{Operating Unit name (Minoria)}
+#'   \item{operatingunituid}{OU unique ID (Minoria)}
+#'   \item{country}{Country (Minoria)}
+#'   \item{geometry}{PSNU level polygon shape for mapping}
+#' }
+"minoria_shp_psnu"
+
+#' Minoria PSNU Shape File
+#'
+#' @description
+#' This dataset is the sf file for mapping (Kingdom of) Minoria by SNU1.
+#'
+#' @family shp
+#' @format ## `minoria_shp_snu1`
+#' A data frame with 4 rows and 6 columns:
+#' \describe{
+#'   \item{snu1uid}{SNU1 unique ID}
+#'   \item{snu1}{Sub-National Unit 1 level below national (from MiLB league)}
+#'   \item{operatingunit}{Operating Unit name (Minoria)}
+#'   \item{operatingunituid}{OU unique ID (Minoria)}
+#'   \item{country}{Country (Minoria)}
+#'   \item{geometry}{SNU1 level polygon shape for mapping}
+#' }
+"minoria_shp_snu1"
+
+#' Minoria PSNU Shape File
+#'
+#' @description
+#' This dataset is the sf file for mapping (Kingdom of) Minoria at the national
+#' level
+#'
+#' @family shp
+#' @format ## `minoria_shp_ou`
+#' A data frame with 16 rows and 7 columns:
+#' \describe{
+#'   \item{operatingunituid}{OU unique ID (Minoria)}
+#'   \item{operatingunit}{Operating Unit name (Minoria)}
+#'   \item{country}{Country (Minoria)}
+#'   \item{geometry}{Country level polygon shape for mapping}
+#' }
+"minoria_shp_ou"

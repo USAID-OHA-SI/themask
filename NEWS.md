@@ -1,4 +1,5 @@
 # themask 1.0.0
+* Add in shape files to the package (and as releases) for use in mapping [2023-10-03]
 * Create function, `msk_available` for the user to check what masked version is available for download [2023-10-02]
 * Create function, `msk_download` for user to download the data from the release [2023-10-02]
 * Create function, `msk_release` to upload a new masked dataset to its own release and to the latest folder by the package owner/maintainers [2023-10-02]
