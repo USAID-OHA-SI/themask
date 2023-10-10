@@ -105,12 +105,20 @@ msk_mech_pull <- function(df){
   #bind existing and new together to export
   df_map <- dplyr::bind_rows(df_existing, df_new)
 
+  #mech still available for future use
+  df_still_available <- df_milb_mechs %>%
+    dplyr::filter(!mech_code_milb %in% df_map$mech_code_milb)
+
   #write back to Gdrive
+  df_upload <- dplyr::bind_rows(df_map, df_still_available)
   suppressMessages(
-    googlesheets4::sheet_write(df_map, gs_mech, sheet = "Sheet1")
+    googlesheets4::sheet_write(df_upload, gs_mech, sheet = "Sheet1")
   )
-  cli::cli_alert_info("New mechanism introduced. Updated mechanism mapping
-                      table on Google Drive.", wrap = TRUE)
+
+  cli::cli_alert_info("{nrow(df_new)} new mechanism{?s} introduced. Updated
+    mechanism mapping table on Google Drive. There are now {nrow(df_map)}
+    mechanisms in use with a total of {nrow(df_still_available)} still
+    availabe for future use", wrap = TRUE)
 
   return(df_map)
 }
