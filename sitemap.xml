@@ -28,6 +28,9 @@
     <loc>https://usaid-oha-si.github.io/themask/reference/minoria_geo.html</loc>
   </url>
   <url>
+    <loc>https://usaid-oha-si.github.io/themask/reference/minoria_mechs.html</loc>
+  </url>
+  <url>
     <loc>https://usaid-oha-si.github.io/themask/reference/minoria_shp_ou.html</loc>
   </url>
   <url>
@@ -65,6 +68,9 @@
   </url>
   <url>
     <loc>https://usaid-oha-si.github.io/themask/reference/msk_mech_map.html</loc>
+  </url>
+  <url>
+    <loc>https://usaid-oha-si.github.io/themask/reference/msk_mech_pull.html</loc>
   </url>
   <url>
     <loc>https://usaid-oha-si.github.io/themask/reference/msk_release.html</loc>
