@@ -2,7 +2,7 @@
 #'
 #' This function is used to upload the new masked dataset to GitHub
 #' (USAID-OHA-SI/themask) so that others can use it. This function is for
-#' package developers use only. The data from [`msk_created()`] are subset to
+#' package developers use only. The data from [`msk_create()`] are subset to
 #' 16 PSNUs and masked across geographic and mechanism variables. Either the
 #' PSNUxIM or NAT_SUBNAT Structured Datasets can be masked.
 #'

@@ -16,6 +16,7 @@ RoxygenNote: 7.2.3
 Imports: 
     cli,
     dplyr,
+    googlesheets4,
     magrittr,
     piggyback,
     readr,

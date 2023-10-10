@@ -19,10 +19,28 @@
 "milb"
 
 
+#' Minoria Mechanism Table
+#'
+#' @description
+#' This table mimics the structure of PEPFAR's MER Structured Datasets (MSD) for
+#' mechanims, which originally originate from FACTInfo NextGen. The dummy
+#' dataset for the (Kingdom of) Minoria has 120 (plus two dedup) mechanisms
+#' available for use. Derived from `milb`.
+#'
+#' @format ## `minoria_mechs`
+#' A data frame with 122 rows and 7 columns:
+#' \describe{
+#'   \item{mech_code}{Unique implementing mechanism code}
+#'   \item{mech_name}{implementing mechanism code (from MiLB team name)}
+#'   \item{prime_partner_name}{implementing mechanism partner (from MiLB team
+#'     name)}
+#' }
+"minoria_mechs"
+
 #' Minoria Geography Table
 #'
 #' @description
-#' This table mimics the structuere of PEPFAR's MER Structured Datasets (MSD).
+#' This table mimics the structure of PEPFAR's MER Structured Datasets (MSD).
 #' The dummy dataset for the (Kingdom of) Minoria has four region (`snu1`), each
 #' containing four districts (`psnu`). Derived from `milb`.
 #'

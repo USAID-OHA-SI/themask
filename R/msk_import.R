@@ -13,6 +13,8 @@ msk_import <- function(filepath){
   if(missing(filepath))
     filepath <- glamr::si_path() %>% glamr::return_latest("PSNU_IM")
 
+  cli::cli_alert_info("Importing the PSD can take a few minutes depending
+                      on processing power. Please be patient.", wrap = TRUE)
   #import PSD
   df <- gophr::read_psd(filepath)
 
