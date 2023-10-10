@@ -37,6 +37,7 @@ reference:
 - title: Data
   contents:
   - '`milb`'
+  - '`minoria_mechs`'
   - '`minoria_geo`'
   - '`minoria_shp_psnu`'
   - '`minoria_shp_snu1`'
