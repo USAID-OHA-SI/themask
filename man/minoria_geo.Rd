@@ -23,7 +23,7 @@ A data frame with 16 rows and 7 columns:
 minoria_geo
 }
 \description{
-This table mimics the structuere of PEPFAR's MER Structured Datasets (MSD).
+This table mimics the structure of PEPFAR's MER Structured Datasets (MSD).
 The dummy dataset for the (Kingdom of) Minoria has four region (\code{snu1}), each
 containing four districts (\code{psnu}). Derived from \code{milb}.
 }
