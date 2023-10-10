@@ -7,7 +7,7 @@ df_milb_mechs <- milb %>%
   dplyr::select(mech_name = name) %>%
   dplyr::mutate(prime_partner_name = mech_name,
                 mech_code =  nrow(milb) %>%
-                  runif(1200, 1800) %>%
+                  sample(1200:1800, .) %>%
                   round %>%
                   as.character %>%
                   stringr::str_pad(5, side = "left", "0")) %>%
@@ -17,7 +17,7 @@ df_dedups <- tibble::tibble(mech_code = c("00000", "00001"),
                                 mech_name = rep("Dedup", 2),
                                 prime_partner_name = rep("Dedup", 2))
 
-minoria_mechs <- dplyr::bind_rows(df_milb_mechs, df_dedups)
+minoria_mechs <- dplyr::bind_rows(df_dedups, df_milb_mechs)
 
 usethis::use_data(minoria_mechs, overwrite = TRUE)
 
