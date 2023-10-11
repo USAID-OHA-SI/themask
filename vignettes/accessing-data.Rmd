@@ -54,6 +54,11 @@ Since these data have been masked, we are able to [host them publicly on our Git
 
 The easiest way to access the data are directly from R using this package. We have built a wrapper around the `piggyback` package to work with releases. You can use  `msk_available()` to check the latest masked MSD version available and then `msk_download()` to download the data. The `msk_available()` will give you a warning if there is a newer MSD available if you want to create your own version.
 
+```{r install, message=FALSE, warning=FALSE, include=FALSE}
+remotes::install_git("USAID-OHA-SI/gophr")
+remotes::install_git("USAID-OHA-SI/glamr")
+```
+
 ```{r setup, message=FALSE, warning=FALSE}
 library(themask)
 library(dplyr)
