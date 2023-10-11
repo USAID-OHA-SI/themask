@@ -50,14 +50,14 @@ msk_download <- function(folderpath, tag = "latest", launch = FALSE){
 
 #' Check the latest version available
 #'
-#' This function is used to check what masked version is currently avaiable and
+#' This function is used to check what masked version is currently available and
 #' will flag if there it is up to date or you should run `msk_create` yourself.
 #'
 #' @export
 
 msk_available <- function(){
   v_name <- piggyback::pb_list("USAID-OHA-SI/themask",
-                     tag = {tag}) %>%
+                     tag = "latest") %>%
     dplyr::pull(file_name)
 
   v_base <- stringr::str_extract(v_name, "PSNU_IM_.*(?=.zip)")

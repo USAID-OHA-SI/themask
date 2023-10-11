@@ -7,6 +7,6 @@
 msk_available()
 }
 \description{
-This function is used to check what masked version is currently avaiable and
+This function is used to check what masked version is currently available and
 will flag if there it is up to date or you should run \code{msk_create} yourself.
 }
