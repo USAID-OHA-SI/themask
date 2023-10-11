@@ -71,19 +71,19 @@ From the file path, we can see the date and version in the file name which will 
 
 To download, we can just run `mask_download()`.
 
-```{r download}
+```{r download, eval=FALSE}
 #download folder path
 # glamr::temp_folder()
 download_folder <- tempdir()
 
 #download
-msk_download(download_folder, launch = TRUE)
+msk_download(download_folder)
 ```
-In the above example, we have specified the param `launch = TRUE` which opens up the Window's folder specified automatically. The other parameter not used is the `tag`, which you can use to [specify an older, available version](https://github.com/USAID-OHA-SI/themask/releases) to use, e.g. `tag = 2023.05.31.i`.
+In the above example, we could have specified the param `launch = TRUE` which opens up the Window's folder specified automatically. The other parameter not used is the `tag`, which you can use to [specify an older, available version](https://github.com/USAID-OHA-SI/themask/releases) to use, e.g. `tag = 2023.05.31.i`.
 
 To load the data into R, you can use your normal `gophr::read_psd()` to get going.
 
-```{r read}
+```{r read, eval=FALSE}
 
 df_msd <- return_latest(download_folder, "PSNU_IM") %>% 
   read_psd()
@@ -94,7 +94,7 @@ glimpse(df_msd)
 
 Also note that if you use the masked dataset, you can use `gophr::get_metadata()`, specifying the path to the file and it will provide information about the masked dataset you can use in the caption for your plot or other documentation.
 
-```{r meta}
+```{r meta, eval=FALSE}
 
 get_metadata(download_folder, "PSNU_IM")
 
