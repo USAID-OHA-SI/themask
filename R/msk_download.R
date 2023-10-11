@@ -36,6 +36,7 @@ msk_download <- function(folderpath, tag = "latest", launch = FALSE){
 
   #download files
   piggyback::pb_download(files,
+                         repo = "USAID-OHA-SI/themask",
                          dest = folderpath,
                          overwrite = TRUE)
 
