@@ -155,7 +155,7 @@ ggplot() +
 
 ```
 
-```{r display_map, echo=FALSE}
+```{r display_map2, echo=FALSE}
 knitr::include_graphics("minoria_map.png")
 ```
 ### Manual
