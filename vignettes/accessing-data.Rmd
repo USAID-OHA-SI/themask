@@ -46,10 +46,6 @@ ggplot() +
 
 The data consist of only indicators from the PEPFAR HIV clinical cascade (see `gophr::cascade_ind`). 
 
-```{r cascade}
-gophr::cascade_ind
-```
-
 ## Accessing Data
 
 Since these data have been masked, we are able to [host them publicly on our GitHub repository via releases](https://github.com/USAID-OHA-SI/themask/releases). Each quarter, we will do our best to update here for your use. To view the PEPFAR MSD schedule, see `glamr::pepfar_data_calendar`. There are a few different ways for you at access the data to start using them.
