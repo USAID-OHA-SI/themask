@@ -20,6 +20,8 @@ jobs:
         run: |
           install.packages(c("remotes", "rcmdcheck"))
           remotes::install_deps(dependencies = TRUE)
+          remotes::install_github("USAID-OHA-SI/gophr")
+          remotes::install_github("USAID-OHA-SI/glamr")
         shell: Rscript {0}
       - name: Check
         run: |

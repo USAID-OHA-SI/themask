@@ -20,29 +20,32 @@ In OHA/SI, we our days are filled with pouring over MER Structure Datasets (MSD)
 
 The training dataset is masked with geographic and team names from [Minor League Baseball](https://en.wikipedia.org/wiki/Minor_League_Baseball#Leagues_and_affiliations) to stand in for `snu1`, `psnu`, `mech_name` and `prime_partner_name`. Other unique identifies, e.g. "uids", have been generated (`msk_gen_uid()`) or in more limited cases have been striped out entirely. The masked operating unit/country is the Kingdom of Minoria, which consists of four regions, `snu1`, each with four districts, `psnu` (`minoria_geo`). 
 
-```{r map, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
+```{r map, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 
-library(ggplot2)
-library(themask)
-library(glitr)
+# library(ggplot2)
+# library(themask)
+# library(glitr)
 
-minoria_shp_psnu <- data(minoria_shp_psnu)
-minoria_shp_ou <- data(minoria_shp_ou)
-
-ggplot() +
-  geom_sf(data = minoria_shp_psnu, aes(geometry = geometry, fill = snu1), color = "white", linewidth = 0.25, alpha = 0.5) +
-  geom_sf(data = minoria_shp_ou, aes(geometry = geometry), fill = NA, color = "white", linewidth = 1) +
-  geom_sf_text(data = minoria_shp_psnu, aes(geometry = geometry, label = psnu), size = 7/.pt) +
-  scale_fill_si(palette = "siei", discrete = TRUE) +
-  scale_color_si(palette = "siei", discrete = TRUE) +
-  si_style_map() +
-  labs(x = "", y = "", title = "INTRODUCING MINORIA, THE NEWEST OU TO PEPFAR",
-       subtitle = "PSNUs labeled on map",
-       caption = "Source: Minoria faux shapefiles") +
-  theme(panel.background = element_rect(fill = "#edf5fc", color = "white"),
-        legend.position = "none")
+# ggplot() +
+#   geom_sf(data = minoria_shp_psnu, aes(geometry = geometry, fill = snu1), color = "white", linewidth = 0.25, alpha = 0.5) +
+#   geom_sf(data = minoria_shp_ou, aes(geometry = geometry), fill = NA, color = "white", linewidth = 1) +
+#   geom_sf_text(data = minoria_shp_psnu, aes(geometry = geometry, label = psnu), size = 7/.pt) +
+#   scale_fill_si(palette = "siei", discrete = TRUE) +
+#   scale_color_si(palette = "siei", discrete = TRUE) +
+#   si_style_map() +
+#   labs(x = "", y = "", title = "INTRODUCING MINORIA, THE NEWEST OU TO PEPFAR",
+#        subtitle = "PSNUs labeled on map",
+#        caption = "Source: Minoria faux shapefiles") +
+#   theme(panel.background = element_rect(fill = "#edf5fc", color = "white"),
+#         legend.position = "none")
+# 
+# si_save("vignettes/minoria_map.png", width = 5)
 
 ```
+```{r display_map, echo=FALSE}
+knitr::include_graphics("minoria_map.png")
+```
+
 
 The data consist of only indicators from the PEPFAR HIV clinical cascade (see `gophr::cascade_ind`). 
 
@@ -69,12 +72,11 @@ msk_available()
 From the file path, we can see the date and version in the file name which will match the MSD releases. From this file, we can see that the latest masked version available is from 2023-09-15, which is from Q3, and the v2 indicates this is the quarter's clean version (as opposed to the initial which would be v1). 
 
 
-To download, we can just run `mask_download()`.
+To download, we can just run `msk_download()`.
 
-```{r download, eval=FALSE}
+```{r download}
 #download folder path
-# glamr::temp_folder()
-download_folder <- tempdir()
+download_folder <- temp_folder()
 
 #download
 msk_download(download_folder)
@@ -83,7 +85,7 @@ In the above example, we could have specified the param `launch = TRUE` which op
 
 To load the data into R, you can use your normal `gophr::read_psd()` to get going.
 
-```{r read, eval=FALSE}
+```{r read}
 
 df_msd <- return_latest(download_folder, "PSNU_IM") %>% 
   read_psd()
@@ -94,7 +96,7 @@ glimpse(df_msd)
 
 Also note that if you use the masked dataset, you can use `gophr::get_metadata()`, specifying the path to the file and it will provide information about the masked dataset you can use in the caption for your plot or other documentation.
 
-```{r meta, eval=FALSE}
+```{r meta}
 
 get_metadata(download_folder, "PSNU_IM")
 
@@ -111,8 +113,9 @@ For those not using R, fear not! You can use these data as well. Instead of havi
 
 If you run `msk_available()` and it is out of date, or you want to create a masked NAT_SUBNAT dataset, you can create your own if you have the full [MSD or NAT_SUBNAT dataset](https://pepfar-panorama.org/forms/downloads/). 
 
-```{r create, echo=TRUE, eval = FALSE}
+```{r create, eval = FALSE, echo=TRUE}
 
+#path to local NAT_SUBNAT dataset
 subnat_path <- si_path() %>% return_latest("NAT_SUBNAT")
 
 #store a masked NAT_SUBNAT dataset
@@ -135,9 +138,7 @@ Within `themask` package itself, we have a few `sf` dataframes that can be inter
 
 library(ggplot2)
 library(glitr)
-
-minoria_shp_psnu <- data(minoria_shp_psnu)
-minoria_shp_ou <- data(minoria_shp_ou)
+library(themask)
 
 ggplot() +
   geom_sf(data = minoria_shp_psnu, aes(geometry = geometry, fill = snu1), color = "white", linewidth = 0.25, alpha = 0.5) +
@@ -154,6 +155,9 @@ ggplot() +
 
 ```
 
+```{r display_map, echo=FALSE}
+knitr::include_graphics("minoria_map.png")
+```
 ### Manual
 
 The shapefile can also be downloaded manually for use in your GIS software of choice, e.g. ArcGIS, QGIS, Tableau. You can download these files from the repository's Releases page, clicking on the [release tagged "shapefiles"](https://github.com/USAID-OHA-SI/themask/releases/tag/shapefiles). Download the zip file(s) you need and unzip them to start using them with your mapping software.
