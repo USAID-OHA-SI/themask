@@ -1,4 +1,5 @@
 # themask 1.0.0
+* Add vignette for accessing data [2023-10-10]
 * Address bug with  `msk_available` that was yielding an error when run [2023-10-10]
 * Built in connection to Google Sheet to maintain mechanisms across datasets and periods [2023-10-10]
 * Adjust `minoria_geo`, removing suffix from names (`_milb`) [2023-10-03]
