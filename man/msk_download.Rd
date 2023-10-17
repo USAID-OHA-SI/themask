@@ -36,3 +36,8 @@ msk_download("~/Downloads, tag = "2023.06.27c")
 \references{
 msk_available
 }
+\seealso{
+Other download: 
+\code{\link{msk_available}()}
+}
+\concept{download}
