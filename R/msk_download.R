@@ -11,6 +11,7 @@
 #'   download completes (default = FALSE)
 #'
 #' @export
+#' @family download
 #' @references msk_available
 #'
 #' @examples \dontrun{
@@ -53,12 +54,21 @@ msk_download <- function(folderpath, tag = "latest", launch = FALSE){
 #'
 #' This function is used to check what masked version is currently available and
 #' will flag if there it is up to date or you should run `msk_create` yourself.
+#' It will also list all available historic releases that can be downloaded in
+#' `msk_download` by specifying the version in the tag param.
 #'
+#' @family download
 #' @export
 
 msk_available <- function(){
-  v_name <- piggyback::pb_list("USAID-OHA-SI/themask",
-                     tag = "latest") %>%
+
+  df_available <- piggyback::pb_list("USAID-OHA-SI/themask") %>%
+    tibble::as_tibble() %>%
+    dplyr::filter(stringr::str_detect(tag, "^20.*|latest")) %>%
+    dplyr::select(file_name, tag)
+
+  v_name <- df_available %>%
+    dplyr::filter(tag == "latest") %>%
     dplyr::pull(file_name)
 
   v_base <- stringr::str_extract(v_name, "PSNU_IM_.*(?=.zip)")
@@ -72,6 +82,20 @@ msk_available <- function(){
     as.Date()
 
   cli::cli_inform("The latest available masked dataset is {.file {v_base}}")
+
+  all <- df_available %>%
+    dplyr::mutate(base = stringr::str_extract(file_name, "PSNU_IM_.*(?=.zip)"),
+                  date = file_name %>% stringr::str_extract("[0-9]{8}") %>% as.Date("%Y%m%d")) %>%
+    dplyr::filter(tag != "latest") %>%
+    dplyr::select(tag, base, date) %>%
+    dplyr::arrange(dplyr::desc(date))
+
+  cli::cli_inform("All available masked dataset for download:")
+  tags <- all$tag
+  tags <- tags %>% paste0(c(" [latest]", rep("", length(tags) - 1)))
+  names(tags) <- c("v", rep("*", length(tags) - 1))
+  cli::cli_bullets(tags)
+  cli::cli_inform("By default, the latest file is downloaded but you can specify the version from above list in the {.field tag} param of {.fn msk_download}")
 
   if(v_date < msd_latest_date)
     cli::cli_warn("There is a newer MSD available to use. Try running

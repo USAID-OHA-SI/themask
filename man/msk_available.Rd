@@ -9,4 +9,11 @@ msk_available()
 \description{
 This function is used to check what masked version is currently available and
 will flag if there it is up to date or you should run \code{msk_create} yourself.
+It will also list all available historic releases that can be downloaded in
+\code{msk_download} by specifying the version in the tag param.
 }
+\seealso{
+Other download: 
+\code{\link{msk_download}()}
+}
+\concept{download}
