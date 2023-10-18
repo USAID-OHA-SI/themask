@@ -106,22 +106,22 @@ does not save the file)</p></dd>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span><span class="co">#create and upload a new release</span></span></span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">glamr</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/USAID-OHA-SI/glamr" class="external-link">glamr</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">themask</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">#store path to latest MSD</span></span></span>
-<span class="r-in"><span><span class="va">path</span> <span class="op">&lt;-</span> <span class="fu">si_path</span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu">return_latest</span><span class="op">(</span><span class="st">"PSNU_IM"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/glamr/man/si_path.html" class="external-link">si_path</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/glamr/man/return_latest.html" class="external-link">return_latest</a></span><span class="op">(</span><span class="st">"PSNU_IM"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">#create a masked dataset from the PSNUxIM MSD</span></span></span>
 <span class="r-in"><span><span class="fu">msk_release</span><span class="op">(</span><span class="va">path</span>, <span class="st">"project1/data"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span><span class="co">#upload release from an existing masked dataset</span></span></span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">glamr</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/USAID-OHA-SI/glamr" class="external-link">glamr</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">themask</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">#store path to masked dataset</span></span></span>
-<span class="r-in"><span><span class="va">path_msk</span> <span class="op">&lt;-</span> <span class="fu">return_latest</span><span class="op">(</span><span class="st">"project1/data"</span>,<span class="st">"TRAINING"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">path_msk</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/glamr/man/return_latest.html" class="external-link">return_latest</a></span><span class="op">(</span><span class="st">"project1/data"</span>,<span class="st">"TRAINING"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">#create a masked dataset from the PSNUxIM MSD</span></span></span>
 <span class="r-in"><span><span class="fu">msk_release</span><span class="op">(</span><span class="va">path_msk</span><span class="op">)</span></span></span>
