@@ -6,5 +6,4 @@ docs
 #nothing from these folders
 
 Data/*
-Dataout/*
 inst/doc
