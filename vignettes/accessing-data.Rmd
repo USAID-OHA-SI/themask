@@ -20,7 +20,7 @@ In OHA/SI, we our days are filled with pouring over MER Structure Datasets (MSD)
 
 The training dataset is masked with geographic and team names from [Minor League Baseball](https://en.wikipedia.org/wiki/Minor_League_Baseball#Leagues_and_affiliations) to stand in for `snu1`, `psnu`, `mech_name` and `prime_partner_name`. Other unique identifies, e.g. "uids", have been generated (`msk_gen_uid()`) or in more limited cases have been striped out entirely. The masked operating unit/country is the Kingdom of Minoria, which consists of four regions, `snu1`, each with four districts, `psnu` (`minoria_geo`). 
 
-```{r map, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+```{r map, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 
 # library(ggplot2)
 # library(themask)
@@ -58,6 +58,12 @@ Since these data have been masked, we are able to [host them publicly on our Git
 The easiest way to access the data are directly from R using this package. We have built a wrapper around the `piggyback` package to work with releases. You can use  `msk_available()` to check the latest masked MSD version available and then `msk_download()` to download the data. The `msk_available()` will give you a warning if there is a newer MSD available if you want to create your own version.
 
 ```{r setup, message=FALSE, warning=FALSE}
+
+#Install packages from
+remotes::install_github("USAID-OHA-SI/gophr")
+remotes::install_github("USAID-OHA-SI/glamr")
+
+#Load Dependencies
 library(themask)
 library(dplyr)
 library(gophr)
