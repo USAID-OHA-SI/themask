@@ -30,17 +30,15 @@ jobs:
         with:
           use-public-rspm: true
 
-      - name: Install dependencies
-        run: |
-          install.packages(c("remotes", "rcmdcheck"))
-          remotes::install_deps(dependencies = TRUE)
-          remotes::install_github("USAID-OHA-SI/gophr")
-          remotes::install_github("USAID-OHA-SI/glamr")
-
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: any::pkgdown, local::.
           needs: website
+
+      - name: Install dependencies
+        run: |
+          remotes::install_github("USAID-OHA-SI/gophr")
+          remotes::install_github("USAID-OHA-SI/glamr")
 
       - name: Build site
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
