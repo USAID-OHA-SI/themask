@@ -36,12 +36,13 @@ msk_download <- function(folderpath, tag = "latest", launch = FALSE){
     dplyr::pull(file_name)
 
   #download files
-  piggyback::pb_download(files,
+  piggyback::pb_download(NULL,
                          repo = "USAID-OHA-SI/themask",
+                         tag = {tag},
                          dest = folderpath,
                          overwrite = TRUE)
 
-  cli::cli_inform("The masked MSD has been downloaded to {.file {folderpath}}")
+  cli::cli_alert_success("The masked MSD has been downloaded to {.file {folderpath}}")
 
   if(launch == TRUE)
     shell.exec(folderpath)
