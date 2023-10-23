@@ -36,8 +36,9 @@ msk_download <- function(folderpath, tag = "latest", launch = FALSE){
     dplyr::pull(file_name)
 
   #download files
-  piggyback::pb_download(files,
+  piggyback::pb_download(NULL,
                          repo = "USAID-OHA-SI/themask",
+                         tag = {tag},
                          dest = folderpath,
                          overwrite = TRUE)
 
