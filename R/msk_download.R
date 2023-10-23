@@ -42,7 +42,7 @@ msk_download <- function(folderpath, tag = "latest", launch = FALSE){
                          dest = folderpath,
                          overwrite = TRUE)
 
-  cli::cli_inform("The masked MSD has been downloaded to {.file {folderpath}}")
+  cli::cli_alert_success("The masked MSD has been downloaded to {.file {folderpath}}")
 
   if(launch == TRUE)
     shell.exec(folderpath)
