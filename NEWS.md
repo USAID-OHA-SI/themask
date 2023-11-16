@@ -1,4 +1,5 @@
 # themask 1.0
+* Added data to package (errantly ignored with .gitignore) [2023-11-16]
 * Resolved issue downloading older releases via `msk_download` [2023-10-23]
 * List all available outputs in `msk_available` for use in specifying what to use when using an older version with `msk_download` [2023-10-17]
 * Add vignette for accessing data [2023-10-10]
