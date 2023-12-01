@@ -8,11 +8,16 @@
 msk_hierarchy <- function(df){
 
   #create a mapping table between PEPFAR PSNUs and masked table (add suffix)
-  msk_geo <- dplyr::bind_cols(psnuuid = msk_psnuuid,
+  msk_geo <- dplyr::bind_cols(cop22_psnuuid = msk_psnuuid,
                               minoria_geo %>% dplyr::rename_with(~paste0(., "_milb")))
 
-  #join masked table onto dataset by psnuuid
-  df_msk <- dplyr::left_join(df, msk_geo, by = dplyr::join_by(psnuuid))
+  #join masked table onto dataset by cop22_psnuuid
+  df_msk <- dplyr::left_join(df, msk_geo, by = dplyr::join_by(cop22_psnuuid))
+
+  #align psnu (introduced FY23Q4)
+  df_msk <- df_msk %>%
+    dplyr::mutate(psnu = ifelse(cop22_psnu == psnu, cop22_psnu_milb, snu1_milb),
+                  psnuuid = ifelse(cop22_psnuuid == psnuuid, cop22_psnuuid_milb, snu1uid_milb))
 
   #remove columns of unmasked data and then remove suffix so df can be reordered
   df_msk <- df_msk %>%

@@ -12,7 +12,7 @@ msk_subset <- function(df){
 
   #filter to select geography (determined in `data-raw/sel_geo.R`)
   df_lim <- df %>%
-    dplyr::filter(psnuuid %in% msk_psnuuid)
+    dplyr::filter(cop22_psnuuid %in% msk_psnuuid)
 
   #filter indicator
   #confirm MSD

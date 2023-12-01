@@ -34,7 +34,7 @@ library(usethis)
            operatingunituid %in% v_ouuid,
            indicator == "TX_CURR") %>%
     pluck_totals() %>%
-    count(operatingunit, operatingunituid, country, snu1, snu1uid, psnu, psnuuid, wt = targets, sort = TRUE) %>%
+    count(operatingunit, operatingunituid, country, snu1, snu1uid, cop22_psnu, cop22_psnuuid, psnu, psnuuid, wt = targets, sort = TRUE) %>%
     arrange(operatingunit, n) %>%
     group_by(operatingunit) %>%
     slice(6:9) %>%
@@ -44,7 +44,7 @@ library(usethis)
 # EXPORT ------------------------------------------------------------------
 
   #export/store for subsetting PEPFAR dataset
-  msk_psnuuid <- pull(df_geo)
+  msk_psnuuid <- pull(df_geo, cop22_psnuuid)
 
   #export OU list to compare new run against what is historically in there
   msk_ouuids <- unique(df_geo$operatingunituid)

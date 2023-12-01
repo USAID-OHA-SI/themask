@@ -1,3 +1,6 @@
+# themask 1.1.0
+* Address MSD structural change including `cop22_psnu` and `cop22_psnuuid` which map to the current (FY23) hierarchy [2023-12-01]
+
 # themask 1.0
 * Added data to package (errantly ignored with .gitignore) [2023-11-16]
 * Resolved issue downloading older releases via `msk_download` [2023-10-23]

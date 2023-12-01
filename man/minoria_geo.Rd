@@ -14,8 +14,8 @@ A data frame with 16 rows and 7 columns:
 \item{country}{Country (Minoria)}
 \item{snu1}{Sub-National Unit 1 level below national (from MiLB league)}
 \item{snu1uid}{SNU1 unique ID}
-\item{psnu}{Priority SNU (from MiLB city)}
-\item{psnuuid}{PSNU unique ID}
+\item{cop22_psnu}{Priority SNU (from MiLB city)}
+\item{cop22_psnuuid}{PSNU unique ID}
 }
 }
 }

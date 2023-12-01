@@ -21,7 +21,7 @@ load_all()
   #subset table for mapping and rename to start aligning with MSD
   df_milb <- df_milb %>%
     select(snu1 = league,
-           psnu = city,
+           cop22_psnu = city,
            mech_name = name,
            prime_partner_name = name)
 
@@ -44,14 +44,14 @@ load_all()
   df_uids <-
     tibble(operatingunituid = rep(msk_gen_uid(), 16),
            snu1uid = replicate(4, msk_gen_uid()) %>% rep(4) %>% sort(),
-           psnuuid = replicate(16, msk_gen_uid()))
+           cop22_psnuuid = replicate(16, msk_gen_uid()))
 
   #bind UIDs onto geography
   df_milb <- df_milb %>%
     bind_cols(df_uids) %>%
     relocate(operatingunituid, .after = operatingunit) %>%
     relocate(snu1uid, .after = snu1) %>%
-    relocate(psnuuid, .after = psnu)
+    relocate(cop22_psnuuid, .after = cop22_psnu)
 
   #remove partner info
   minoria_geo <- df_milb %>%
