@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">themask</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0</span>
       </span>
     </div>
 
@@ -167,7 +167,9 @@ MSD available if you want to create your own version.</p>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">•</span> 2023.06.16.c</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; By default, the latest file is downloaded but you can specify the version from</span></span>
-<span><span class="co">#&gt; above list in the <span style="color: #00BB00;">tag</span> param of `msk_download()`</span></span></code></pre></div>
+<span><span class="co">#&gt; above list in the <span style="color: #00BB00;">tag</span> param of `msk_download()`</span></span>
+<span><span class="co">#&gt; Warning: There is a newer MSD available to use. Try running `msk_create()`</span></span>
+<span><span class="co">#&gt; (`?themask::msk_create()`)</span></span></code></pre></div>
 <p>From the file path, we can see the date and version in the file name
 which will match the MSD releases. From this file, we can see that the
 latest masked version available is from 2023-09-15, which is from Q3,
@@ -177,12 +179,12 @@ the initial which would be v1).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#download folder path</span></span>
 <span><span class="va">download_folder</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/glamr/man/temp_folder.html" class="external-link">temp_folder</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> A temporary folder is now available here: <span style="color: #0000BB;">'/tmp/RtmpFwPhAe/file1bba2387205b/'</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> A temporary folder is now available here: <span style="color: #0000BB;">'/tmp/RtmpNaacLR/file1a6f3946a7bb/'</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> The folder path is stored as the object <span style="color: #555555;">`folderpath_tmp`</span></span></span>
 <span></span>
 <span><span class="co">#download</span></span>
 <span><span class="fu"><a href="../reference/msk_download.html">msk_download</a></span><span class="op">(</span><span class="va">download_folder</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> The masked MSD has been downloaded to <span style="color: #0000BB;">/tmp/RtmpFwPhAe/file1bba2387205b</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> The masked MSD has been downloaded to <span style="color: #0000BB;">/tmp/RtmpNaacLR/file1a6f3946a7bb</span></span></span></code></pre></div>
 <p>In the above example, we could have specified the param
 <code>launch = TRUE</code> which opens up the Window’s folder specified
 automatically. The other parameter not used is the <code>tag</code>,
@@ -195,7 +197,7 @@ e.g. <code>tag = 2023.05.31.i</code>.</p>
 <code class="sourceCode R"><span></span>
 <span><span class="va">df_msd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/glamr/man/return_latest.html" class="external-link">return_latest</a></span><span class="op">(</span><span class="va">download_folder</span>, <span class="st">"PSNU_IM"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://usaid-oha-si.github.io/gophr/reference/read_psd.html" class="external-link">read_psd</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> Latest file in <span style="color: #0000BB;">'file1bba2387205b'</span> matching <span style="color: #0000BB;">'PSNU_IM'</span>:</span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> Latest file in <span style="color: #0000BB;">'file1a6f3946a7bb'</span> matching <span style="color: #0000BB;">'PSNU_IM'</span>:</span></span>
 <span><span class="co">#&gt; <span style="color: #0000BB;">'MER_Structured_TRAINING_Datasets_PSNU_IM_FY58-61_20230915_v2_1.zip'</span></span></span>
 <span></span>
 <span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">df_msd</span><span class="op">)</span></span>
@@ -249,7 +251,7 @@ caption for your plot or other documentation.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="https://usaid-oha-si.github.io/gophr/reference/get_metadata.html" class="external-link">get_metadata</a></span><span class="op">(</span><span class="va">download_folder</span>, <span class="st">"PSNU_IM"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> Latest file in <span style="color: #0000BB;">'file1bba2387205b'</span> matching <span style="color: #0000BB;">'PSNU_IM'</span>: <span style="color: #0000BB;">'MER_Structured_TRAINING_Datasets_PSNU_IM_FY58-61_20230915_v2_1.zip'</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> Latest file in <span style="color: #0000BB;">'file1a6f3946a7bb'</span> matching <span style="color: #0000BB;">'PSNU_IM'</span>: <span style="color: #0000BB;">'MER_Structured_TRAINING_Datasets_PSNU_IM_FY58-61_20230915_v2_1.zip'</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> <span style="color: #00BB00;">metadata</span> is now stored as a global object and metadata items can be accessed via <span style="color: #555555;">`metadata$...`</span></span></span>
 <span></span>
 <span><span class="va">metadata</span></span>
