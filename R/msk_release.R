@@ -76,6 +76,7 @@ msk_release <- function(filepath, output_folder){
                        tag = tag_name)
 
   #upload, overwriting the "latest" version
+  piggyback::pb_delete(tag = "latest")
   piggyback::pb_upload(filepath,
                        "USAID-OHA-SI/themask",
                        overwrite = TRUE,
