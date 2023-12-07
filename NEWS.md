@@ -1,4 +1,5 @@
-# themask 1.1.0
+# themask 1.1
+* Fixed bug with only having the latest file in the latest release instead of adding to what currently exists [2023-12-07]
 * Address MSD structural change including `cop22_psnu` and `cop22_psnuuid` which map to the current (FY23) hierarchy [2023-12-01]
 
 # themask 1.0
