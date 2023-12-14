@@ -48,12 +48,7 @@ msk_release <- function(filepath, output_folder){
     output_folder <- tempdir()
 
   #release version tag
-  tag_name <- filepath %>%
-    stringr::str_extract("[0-9]{8}_v[0-9]*") %>%
-    stringr::str_sub(c(1, 5, 7, 9), c(4, 6, 8, 11)) %>%
-    paste(collapse = ".") %>%
-    stringr::str_replace("_v1", "i") %>%
-    stringr::str_replace("_v2", "c")
+  tag_name <- gen_tag(filepath)
 
   #if the filepath is not a masked file, create one
   if(!grepl("TRAINING", filepath)){
