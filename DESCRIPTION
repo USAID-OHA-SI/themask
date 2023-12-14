@@ -1,7 +1,7 @@
 Package: themask
 Title: Masks and houses the PEPFAR MSD-style training dataset for 
     testing and training
-Version: 1.1.1
+Version: 1.1.2
 Authors@R: c(
     person("Aaron", "Chafetz", , "achafetz@usaid.gov", role = c("aut", "cre")),
     person("Tim", "Essam", , "tessam@usaid.gov", role = c("ctb"))
@@ -36,7 +36,7 @@ Suggests:
     glue,
     googledrive,
     knitr,
-    remotes,
+    pak,
     rlang (>= 1.0.0),
     rmarkdown,
     testthat (>= 3.0.0),

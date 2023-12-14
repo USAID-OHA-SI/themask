@@ -7,7 +7,7 @@
 
 msk_mech <- function(df){
 
-  if(!"mech_code" %in% df)
+  if(!"mech_code" %in% names(df))
     return(df)
 
   #create mapping table

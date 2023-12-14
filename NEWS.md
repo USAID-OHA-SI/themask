@@ -1,4 +1,6 @@
 # themask 1.1
+* Deletes release if reposting same tag [2023-12-14]
+* Resolved bug with mech code mapping [2023-12-14]
 * Fixed bug with only having the latest file in the latest release instead of adding to what currently exists [2023-12-07]
 * Address MSD structural change including `cop22_psnu` and `cop22_psnuuid` which map to the current (FY23) hierarchy [2023-12-01]
 

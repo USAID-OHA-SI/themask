@@ -12,23 +12,23 @@ This repository houses the PEPFAR MSD-style training dataset to use for testing 
 
 ## Installation
 
-`themask` is not on CRAN, so you will have to install it directly from GitHub using `remotes`.
+`themask` is not on CRAN, so you will have to install it directly from GitHub using `pak`.
 
-If you do not have `remotes` installed, you will have to run the `install.packages("remotes")` line in the code below as well.
+If you do not have `pak` installed, you will have to run the `install.packages("pak")` line in the code below as well.
 
 
 ``` r
 ## SETUP
 
   #install package with vignettes
-    install.packages("remotes")
-    remotes::install_github("USAID-OHA-SI/themask", build_vignettes = TRUE)
+    install.packages("pak")
+    pak::pak("USAID-OHA-SI/themask")
     
   #load the package
     library(themask)
 
 ## LIST TYPES OF STYLES INCLUDED WITH PACKAGE
-  ls(package:themask)
+  ls('package:themask')
 ```
 
 ---

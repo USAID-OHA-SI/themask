@@ -48,12 +48,7 @@ msk_release <- function(filepath, output_folder){
     output_folder <- tempdir()
 
   #release version tag
-  tag_name <- filepath %>%
-    stringr::str_extract("[0-9]{8}_v[0-9]*") %>%
-    stringr::str_sub(c(1, 5, 7, 9), c(4, 6, 8, 11)) %>%
-    paste(collapse = ".") %>%
-    stringr::str_replace("_v1", "i") %>%
-    stringr::str_replace("_v2", "c")
+  tag_name <- gen_tag(filepath)
 
   #if the filepath is not a masked file, create one
   if(!grepl("TRAINING", filepath)){
@@ -68,17 +63,46 @@ msk_release <- function(filepath, output_folder){
       dplyr::pull(filepath)
   }
 
+  #check if tag currently exists
+  tag_existing <- piggyback::pb_list("USAID-OHA-SI/themask") %>%
+    tibble::as_tibble() %>%
+    dplyr::filter(stringr::str_detect(tag, "^20.*")) %>%
+    dplyr::distinct(tag) %>%
+    dplyr::pull()
+
+  if(tag_name %in% tag_existing)
+    piggyback::pb_delete(repo = "USAID-OHA-SI/themask", tag = tag_name)
+
   #upload new masked file to GH
   piggyback::pb_new_release(repo = "USAID-OHA-SI/themask", tag = tag_name)
 
   piggyback::pb_upload(filepath,
                        "USAID-OHA-SI/themask",
+                       overwrite = TRUE,
                        tag = tag_name)
 
   #upload, overwriting the "latest" version
-  piggyback::pb_delete(tag = "latest")
+  piggyback::pb_delete(repo = "USAID-OHA-SI/themask", tag = "latest")
   piggyback::pb_upload(filepath,
                        "USAID-OHA-SI/themask",
                        overwrite = TRUE,
                        tag = "latest")
+}
+
+
+#' Created a tag from the file version
+#'
+#' @param filepath path to the PSD file (PSNUxIM or NAT_SUBNAT)
+#'
+#' @return tag name
+#' @keywords internal
+#'
+gen_tag <- function(filepath){
+  filepath %>%
+    stringr::str_extract("[0-9]{8}_v[0-9]*") %>%
+    stringr::str_sub(c(1, 5, 7, 9), c(4, 6, 8, 11)) %>%
+    paste(collapse = ".") %>%
+    stringr::str_replace("_v1", "i") %>%
+    stringr::str_replace("_v2", "c")
+
 }
