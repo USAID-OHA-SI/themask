@@ -61,9 +61,9 @@ The easiest way to access the data are directly from R using this package. We ha
 ```{r setup, message=FALSE, warning=FALSE}
 
 #Install packages from
-remotes::install_github("USAID-OHA-SI/gophr", quiet = TRUE)
-remotes::install_github("USAID-OHA-SI/glamr", quiet = TRUE)
-remotes::install_github("USAID-OHA-SI/glitr", quiet = TRUE)
+pak::pak("USAID-OHA-SI/gophr")
+pak::pak("USAID-OHA-SI/glamr")
+pak::pak("USAID-OHA-SI/glitr")
 
 #Load Dependencies
 library(themask)

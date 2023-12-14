@@ -36,7 +36,7 @@ Suggests:
     glue,
     googledrive,
     knitr,
-    remotes,
+    pak,
     rlang (>= 1.0.0),
     rmarkdown,
     testthat (>= 3.0.0),
