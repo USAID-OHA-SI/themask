@@ -44,7 +44,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">themask</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.3</span>
       </span>
     </div>
 
@@ -110,14 +110,16 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p><code>themask</code> is not on CRAN, so you will have to install it directly from GitHub using <code>pak</code>.</p>
-<p>If you do not have <code>pak</code> installed, you will have to run the <code>install.packages("pak")</code> line in the code below as well.</p>
+<p><code>themask</code> is not on CRAN, so you will have to install it directly from <a href="https://usaid-oha-si.r-universe.dev/packages" class="external-link">rOpenSci</a> or <a href="https://github.com/USAID-OHA-SI/" class="external-link">GitHub</a> using the code found below.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## SETUP</span></span>
 <span></span>
-<span>  <span class="co">#install package with vignettes</span></span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"pak"</span><span class="op">)</span></span>
-<span>    <span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"USAID-OHA-SI/themask"</span><span class="op">)</span></span>
+<span>  <span class="co">#install from rOpenSci</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'themask'</span>, repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'https://usaid-oha-si.r-universe.dev'</span>, <span class="st">'https://cloud.r-project.org'</span><span class="op">)</span><span class="op">)</span></span>
+<span>    </span>
+<span>  <span class="co">#alt: install from GitHub using pak</span></span>
+<span>    <span class="co">#install.packages("pak")</span></span>
+<span>    <span class="co">#pak::pak("USAID-OHA-SI/themask")</span></span>
 <span>    </span>
 <span>  <span class="co">#load the package</span></span>
 <span>    <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">themask</span><span class="op">)</span></span>
@@ -159,6 +161,8 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/USAID-OHA-SI/themask/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/USAID-OHA-SI/themask/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://usaid-oha-si.r-universe.dev/themask" class="external-link"><img src="https://usaid-oha-si.r-universe.dev/badges/themask" alt="themask status badge"></a></li>
+<li><a href="https://usaid-oha-si.r-universe.dev/" class="external-link"><img src="https://usaid-oha-si.r-universe.dev/badges/:name" alt=":name status badge"></a></li>
 </ul>
 </div>
 
