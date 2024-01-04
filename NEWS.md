@@ -1,4 +1,5 @@
 # themask 1.1
+* Change instructions to install from rOpenSci [2024-01-04]
 * Deletes release if reposting same tag [2023-12-14]
 * Resolved bug with mech code mapping [2023-12-14]
 * Fixed bug with only having the latest file in the latest release instead of adding to what currently exists [2023-12-07]

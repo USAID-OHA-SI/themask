@@ -1,6 +1,8 @@
 ## themask <img src="man/figures/logo.png" align="right" height="120" alt="" />
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/USAID-OHA-SI/themask/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/USAID-OHA-SI/themask/actions/workflows/R-CMD-check.yaml)
+[![themask status badge](https://usaid-oha-si.r-universe.dev/badges/themask)](https://usaid-oha-si.r-universe.dev/themask)
+[![:name status badge](https://usaid-oha-si.r-universe.dev/badges/:name)](https://usaid-oha-si.r-universe.dev/)
 <!-- badges: end -->
 
 
@@ -12,17 +14,18 @@ This repository houses the PEPFAR MSD-style training dataset to use for testing 
 
 ## Installation
 
-`themask` is not on CRAN, so you will have to install it directly from GitHub using `pak`.
-
-If you do not have `pak` installed, you will have to run the `install.packages("pak")` line in the code below as well.
+`themask` is not on CRAN, so you will have to install it directly from [rOpenSci](https://usaid-oha-si.r-universe.dev/packages) or [GitHub](https://github.com/USAID-OHA-SI/) using the code found below.
 
 
 ``` r
 ## SETUP
 
-  #install package with vignettes
-    install.packages("pak")
-    pak::pak("USAID-OHA-SI/themask")
+  #install from rOpenSci
+    install.packages('themask', repos = c('https://usaid-oha-si.r-universe.dev', 'https://cloud.r-project.org'))
+    
+  #alt: install from GitHub using pak
+    #install.packages("pak")
+    #pak::pak("USAID-OHA-SI/themask")
     
   #load the package
     library(themask)
