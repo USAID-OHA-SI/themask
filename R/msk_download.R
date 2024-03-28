@@ -45,7 +45,7 @@ msk_download <- function(folderpath, tag = "latest", launch = FALSE){
   cli::cli_alert_success("The masked MSD has been downloaded to {.file {folderpath}}")
 
   if(launch == TRUE)
-    shell.exec(folderpath)
+    utils::browseURL(folderpath)
 
 }
 
