@@ -108,9 +108,9 @@ Also note that if you use the masked dataset, you can use `gophr::get_metadata()
 
 ```{r meta}
 
-get_metadata(download_folder, "PSNU_IM")
+meta <- get_metadata(download_folder, "PSNU_IM")
 
-metadata
+meta
 
 ```
 
