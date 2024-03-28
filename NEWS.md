@@ -1,4 +1,5 @@
 # themask 1.1
+* Update the ability to launch the folder path on any OS (previously just Windows) with `msk_download` [2024-03-28]
 * Change instructions to install from rOpenSci [2024-01-04]
 * Deletes release if reposting same tag [2023-12-14]
 * Resolved bug with mech code mapping [2023-12-14]
