@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">themask</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.5</span>
       </span>
     </div>
 
@@ -185,13 +185,13 @@ the initial which would be v1).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#download folder path</span></span>
 <span><span class="va">download_folder</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/glamr/man/temp_folder.html" class="external-link">temp_folder</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> A temporary folder is now available here: <span style="color: #0000BB;">'/tmp/Rtmp19W1Fp/file19356af38eb3/'</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> A temporary folder is now available here: <span style="color: #0000BB;">'/tmp/RtmpmwwGUR/file195e15eee66e/'</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> The folder path is stored as the object <span style="color: #555555;">`folderpath_tmp`</span></span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co">#download</span></span>
 <span><span class="fu"><a href="../reference/msk_download.html">msk_download</a></span><span class="op">(</span><span class="va">download_folder</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> The masked MSD has been downloaded to <span style="color: #0000BB;">/tmp/Rtmp19W1Fp/file19356af38eb3</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> The masked MSD has been downloaded to <span style="color: #0000BB;">/tmp/RtmpmwwGUR/file195e15eee66e</span></span></span></code></pre></div>
 <p>In the above example, we could have specified the param
 <code>launch = TRUE</code> which opens up the Window’s folder specified
 automatically. The other parameter not used is the <code>tag</code>,
@@ -204,7 +204,7 @@ e.g. <code>tag = 2023.05.31.i</code>.</p>
 <code class="sourceCode R"><span></span>
 <span><span class="va">df_msd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/glamr/man/return_latest.html" class="external-link">return_latest</a></span><span class="op">(</span><span class="va">download_folder</span>, <span class="st">"PSNU_IM"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://usaid-oha-si.github.io/gophr/reference/read_psd.html" class="external-link">read_psd</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> Latest file in <span style="color: #0000BB;">'file19356af38eb3'</span> matching <span style="color: #0000BB;">'PSNU_IM'</span>:</span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> Latest file in <span style="color: #0000BB;">'file195e15eee66e'</span> matching <span style="color: #0000BB;">'PSNU_IM'</span>:</span></span>
 <span><span class="co">#&gt; <span style="color: #0000BB;">'MER_Structured_TRAINING_Datasets_PSNU_IM_FY59-61_20240517_v1_1.zip'</span></span></span></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
@@ -266,7 +266,7 @@ caption for your plot or other documentation.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://usaid-oha-si.github.io/gophr/reference/get_metadata.html" class="external-link">get_metadata</a></span><span class="op">(</span><span class="va">download_folder</span>, <span class="st">"PSNU_IM"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> Latest file in <span style="color: #0000BB;">'file19356af38eb3'</span> matching <span style="color: #0000BB;">'PSNU_IM'</span>:</span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> Latest file in <span style="color: #0000BB;">'file195e15eee66e'</span> matching <span style="color: #0000BB;">'PSNU_IM'</span>:</span></span>
 <span><span class="co">#&gt; <span style="color: #0000BB;">'MER_Structured_TRAINING_Datasets_PSNU_IM_FY59-61_20240517_v1_1.zip'</span></span></span>
 <span><span class="co">#&gt; Warning: <span style="color: #00BB00;">metadata</span> is NO LONGER (v3.2.3) exported by default as a global</span></span>
 <span><span class="co">#&gt; object.</span></span>
