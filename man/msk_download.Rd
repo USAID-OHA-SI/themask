@@ -26,11 +26,11 @@ is available to download.
 msk_available()
 
 #download to your downloads folder
-msk_download("~/Downloads)
+msk_download("~/Downloads")
 }
 \dontrun{
 #download an older version
-msk_download("~/Downloads, tag = "2023.06.27c")
+msk_download("~/Downloads", tag = "2023.06.27c")
 }
 }
 \references{

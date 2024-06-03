@@ -47,6 +47,7 @@ msk_filename <- function(df, filepath){
   #masked year for
   v_yr <- df %>%
     dplyr::distinct(fiscal_year) %>%
+    dplyr::arrange(fiscal_year) %>%
     dplyr::filter(fiscal_year == min(fiscal_year) | fiscal_year == max(fiscal_year)) %>%
     dplyr::mutate(fiscal_year = stringr::str_remove(fiscal_year, "20")) %>%
     dplyr::pull() %>%
