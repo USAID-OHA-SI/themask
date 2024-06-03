@@ -61,7 +61,7 @@ The easiest way to access the data are directly from R using this package. We ha
 ```{r install, message=FALSE, warning=FALSE}
 #Install OHA packages from rOpenSci
 oha_pkgs <- c("gophr", "glamr", "glitr")
-install.packages(oha_pkgs, repos = c('https://usaid-oha-si.r-universe.dev', getOption("repos")))
+install.packages(oha_pkgs, repos = c('https://usaid-oha-si.r-universe.dev', 'https://cloud.r-project.org'))
 ```
 
 ```{r setup, message=FALSE, warning=FALSE}
