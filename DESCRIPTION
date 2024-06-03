@@ -35,6 +35,8 @@ LazyData: true
 Suggests: 
     glue,
     googledrive,
+    ggplot2,
+    keyring,
     knitr,
     pak,
     rlang (>= 1.0.0),
