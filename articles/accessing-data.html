@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -160,9 +160,13 @@ MSD available if you want to create your own version.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#check if you have the latest version available</span></span>
 <span><span class="fu"><a href="../reference/msk_available.html">msk_available</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; The latest available masked dataset is <span style="color: #0000BB;">PSNU_IM_FY59-61_20240215_v1_1</span></span></span>
+<span><span class="co">#&gt; The latest available masked dataset is <span style="color: #0000BB;">PSNU_IM_FY59-61_20240517_v1_1</span></span></span>
 <span><span class="co">#&gt; All available masked dataset for download:</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> 2024.02.15.i [latest]</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> 2024.05.17.i [latest]</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">•</span> 2024.03.15.c</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">•</span> 2024.02.15.i</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">•</span> 2023.11.14.i</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -171,9 +175,7 @@ MSD available if you want to create your own version.</p>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">•</span> 2023.06.16.c</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; By default, the latest file is downloaded but you can specify the version from</span></span>
-<span><span class="co">#&gt; above list in the <span style="color: #00BB00;">tag</span> param of `msk_download()`</span></span>
-<span><span class="co">#&gt; Warning: There is a newer MSD available to use. Try running `msk_create()`</span></span>
-<span><span class="co">#&gt; (`?themask::msk_create()`)</span></span></code></pre></div>
+<span><span class="co">#&gt; above list in the <span style="color: #00BB00;">tag</span> param of `msk_download()`</span></span></code></pre></div>
 <p>From the file path, we can see the date and version in the file name
 which will match the MSD releases. From this file, we can see that the
 latest masked version available is from 2023-09-15, which is from Q3,
@@ -183,12 +185,13 @@ the initial which would be v1).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#download folder path</span></span>
 <span><span class="va">download_folder</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/glamr/man/temp_folder.html" class="external-link">temp_folder</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> A temporary folder is now available here: <span style="color: #0000BB;">'/tmp/RtmpG0e20E/file1a6f4f09e92/'</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> The folder path is stored as the object <span style="color: #555555;">`folderpath_tmp`</span></span></span>
-<span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> A temporary folder is now available here: <span style="color: #0000BB;">'/tmp/Rtmp19W1Fp/file19356af38eb3/'</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> The folder path is stored as the object <span style="color: #555555;">`folderpath_tmp`</span></span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
 <span><span class="co">#download</span></span>
 <span><span class="fu"><a href="../reference/msk_download.html">msk_download</a></span><span class="op">(</span><span class="va">download_folder</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> The masked MSD has been downloaded to <span style="color: #0000BB;">/tmp/RtmpG0e20E/file1a6f4f09e92</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> The masked MSD has been downloaded to <span style="color: #0000BB;">/tmp/Rtmp19W1Fp/file19356af38eb3</span></span></span></code></pre></div>
 <p>In the above example, we could have specified the param
 <code>launch = TRUE</code> which opens up the Window’s folder specified
 automatically. The other parameter not used is the <code>tag</code>,
@@ -197,81 +200,83 @@ older, available version</a> to use,
 e.g. <code>tag = 2023.05.31.i</code>.</p>
 <p>To load the data into R, you can use your normal
 <code><a href="https://usaid-oha-si.github.io/gophr/reference/read_psd.html" class="external-link">gophr::read_psd()</a></code> to get going.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">df_msd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/glamr/man/return_latest.html" class="external-link">return_latest</a></span><span class="op">(</span><span class="va">download_folder</span>, <span class="st">"PSNU_IM"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://usaid-oha-si.github.io/gophr/reference/read_psd.html" class="external-link">read_psd</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> Latest file in <span style="color: #0000BB;">'file1a6f4f09e92'</span> matching <span style="color: #0000BB;">'PSNU_IM'</span>:</span></span>
-<span><span class="co">#&gt; <span style="color: #0000BB;">'MER_Structured_TRAINING_Datasets_PSNU_IM_FY59-61_20240215_v1_1.zip'</span></span></span>
-<span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> Latest file in <span style="color: #0000BB;">'file19356af38eb3'</span> matching <span style="color: #0000BB;">'PSNU_IM'</span>:</span></span>
+<span><span class="co">#&gt; <span style="color: #0000BB;">'MER_Structured_TRAINING_Datasets_PSNU_IM_FY59-61_20240517_v1_1.zip'</span></span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">df_msd</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Rows: 51,582</span></span>
+<span><span class="co">#&gt; Rows: 53,724</span></span>
 <span><span class="co">#&gt; Columns: 48</span></span>
 <span><span class="co">#&gt; $ operatingunit               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Minoria", "Minoria", "Minoria", "Minoria"…</span></span>
 <span><span class="co">#&gt; $ operatingunituid            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "kAYJjRwuXG6", "kAYJjRwuXG6", "kAYJjRwuXG6…</span></span>
 <span><span class="co">#&gt; $ country                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Minoria", "Minoria", "Minoria", "Minoria"…</span></span>
 <span><span class="co">#&gt; $ snu1                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Midwest", "Midwest", "Midwest", "Midwest"…</span></span>
 <span><span class="co">#&gt; $ snu1uid                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Dh3xiXWw0Z7", "Dh3xiXWw0Z7", "Dh3xiXWw0Z7…</span></span>
-<span><span class="co">#&gt; $ cop22_psnu                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Wisconsin", "Quad Cities", "Peoria", "Wis…</span></span>
-<span><span class="co">#&gt; $ cop22_psnuuid               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "XwREtn25Uj1", "FBzC1U92lJn", "icPkb3tE61B…</span></span>
-<span><span class="co">#&gt; $ cop22_snuprioritization     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "4 - Sustained", "1 - Scale-Up: Saturation…</span></span>
-<span><span class="co">#&gt; $ psnu                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Wisconsin", "Quad Cities", "Peoria", "Wis…</span></span>
-<span><span class="co">#&gt; $ psnuuid                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "XwREtn25Uj1", "FBzC1U92lJn", "icPkb3tE61B…</span></span>
-<span><span class="co">#&gt; $ snuprioritization           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "4 - Sustained", "1 - Scale-Up: Saturation…</span></span>
+<span><span class="co">#&gt; $ cop22_psnu                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Quad Cities", "Great Lakes", "Quad Cities…</span></span>
+<span><span class="co">#&gt; $ cop22_psnuuid               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "FBzC1U92lJn", "gwmjspIcLT4", "FBzC1U92lJn…</span></span>
+<span><span class="co">#&gt; $ cop22_snuprioritization     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1 - Scale-Up: Saturation", "1 - Scale-Up:…</span></span>
+<span><span class="co">#&gt; $ psnu                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Quad Cities", "Great Lakes", "Quad Cities…</span></span>
+<span><span class="co">#&gt; $ psnuuid                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "FBzC1U92lJn", "gwmjspIcLT4", "FBzC1U92lJn…</span></span>
+<span><span class="co">#&gt; $ snuprioritization           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1 - Scale-Up: Saturation", "1 - Scale-Up:…</span></span>
 <span><span class="co">#&gt; $ typemilitary                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "N", "N", "N", "N", "N", "N", "N", "N", "N…</span></span>
 <span><span class="co">#&gt; $ dreams                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "N", "N", "N", "N", "N", "N", "N", "N", "N…</span></span>
-<span><span class="co">#&gt; $ prime_partner_name          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Cubs", "Crawdads", "Captains", "Chiefs", …</span></span>
-<span><span class="co">#&gt; $ funding_agency              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "USAID", "USAID", "HHS/CDC", "HHS/CDC", "H…</span></span>
-<span><span class="co">#&gt; $ mech_code                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "01441", "01568", "01498", "01470", "01703…</span></span>
-<span><span class="co">#&gt; $ mech_name                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Cubs", "Crawdads", "Captains", "Chiefs", …</span></span>
+<span><span class="co">#&gt; $ prime_partner_name          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Sod Poodles", "Chiefs", "Captains", "Craw…</span></span>
+<span><span class="co">#&gt; $ funding_agency              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "HHS/CDC", "HHS/CDC", "HHS/CDC", "USAID", …</span></span>
+<span><span class="co">#&gt; $ mech_code                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "01223", "01470", "01498", "01568", "01568…</span></span>
+<span><span class="co">#&gt; $ mech_name                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Sod Poodles", "Chiefs", "Captains", "Craw…</span></span>
 <span><span class="co">#&gt; $ is_indigenous_prime_partner <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y…</span></span>
-<span><span class="co">#&gt; $ indicator                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "HTS_TST", "TX_NET_NEW", "HTS_TST", "TX_CU…</span></span>
-<span><span class="co">#&gt; $ numeratordenom              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "N", "N", "N", "N", "D", "N", "N", "N", "N…</span></span>
+<span><span class="co">#&gt; $ indicator                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "TX_PVLS", "HTS_TST", "TX_CURR", "HTS_TST"…</span></span>
+<span><span class="co">#&gt; $ numeratordenom              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "N", "N", "N", "N", "N", "D", "N", "N", "N…</span></span>
 <span><span class="co">#&gt; $ indicatortype               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "DSD", "DSD", "DSD", "DSD", "DSD", "DSD", …</span></span>
-<span><span class="co">#&gt; $ standardizeddisaggregate    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Modality/Age/Sex/Result", "Age/Sex/HIVSta…</span></span>
-<span><span class="co">#&gt; $ categoryoptioncomboname     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "15-19, Newly Tested Positives, Female", "…</span></span>
+<span><span class="co">#&gt; $ standardizeddisaggregate    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Age/Sex/Indication/HIVStatus", "Modality/…</span></span>
+<span><span class="co">#&gt; $ categoryoptioncomboname     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "45-49, Male, Routine, Positive", "30-34, …</span></span>
 <span><span class="co">#&gt; $ use_for_age                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y…</span></span>
-<span><span class="co">#&gt; $ ageasentered                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "15-19", "35-39", "45-49", "25-29", "10-14…</span></span>
-<span><span class="co">#&gt; $ age_2018                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "15-19", "35-39", "40-49", "25-29", "10-14…</span></span>
-<span><span class="co">#&gt; $ age_2019                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "15-19", "35-39", "45-49", "25-29", "10-14…</span></span>
-<span><span class="co">#&gt; $ target_age_2024             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "15-24", "35-49", "35-49", "25-34", "10-14…</span></span>
-<span><span class="co">#&gt; $ trendscoarse                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "15+", "15+", "15+", "15+", "&lt;15", "&lt;15", …</span></span>
-<span><span class="co">#&gt; $ sex                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Female", "Male", "Male", "Female", "Femal…</span></span>
-<span><span class="co">#&gt; $ statushiv                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Positive", "Positive", "Positive", "Posit…</span></span>
+<span><span class="co">#&gt; $ ageasentered                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "45-49", "30-34", "60-64", "45-49", "25-34…</span></span>
+<span><span class="co">#&gt; $ age_2018                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "40-49", "30-34", "50+", "40-49", "Newer A…</span></span>
+<span><span class="co">#&gt; $ age_2019                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "45-49", "30-34", "50+", "45-49", "Newer A…</span></span>
+<span><span class="co">#&gt; $ target_age_2024             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "35-49", "25-34", "50+", "35-49", "25-34",…</span></span>
+<span><span class="co">#&gt; $ trendscoarse                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "15+", "15+", "15+", "15+", "15+", "15+", …</span></span>
+<span><span class="co">#&gt; $ sex                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Male", "Male", "Female", "Male", "Female"…</span></span>
+<span><span class="co">#&gt; $ statushiv                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Positive", "Negative", "Positive", "Posit…</span></span>
 <span><span class="co">#&gt; $ statustb                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
 <span><span class="co">#&gt; $ statuscx                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
-<span><span class="co">#&gt; $ hiv_treatment_status        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, "Already", NA, NA, NA, NA, NA,…</span></span>
-<span><span class="co">#&gt; $ otherdisaggregate           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Newly Identified", NA, "Newly Identified"…</span></span>
+<span><span class="co">#&gt; $ hiv_treatment_status        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, "Already", NA, "New", NA, NA, NA, …</span></span>
+<span><span class="co">#&gt; $ otherdisaggregate           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Routine", NA, NA, NA, NA, "Routine", "New…</span></span>
 <span><span class="co">#&gt; $ otherdisaggregate_sub       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
-<span><span class="co">#&gt; $ modality                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "TBClinic", NA, "TBClinic", NA, NA, "Activ…</span></span>
-<span><span class="co">#&gt; $ target_modality_2024        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "TBClinic", "N/A", "TBClinic", "N/A", "N/A…</span></span>
-<span><span class="co">#&gt; $ fiscal_year                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2059, 2060, 2060, 2060, 2060, 2061, 2060, …</span></span>
-<span><span class="co">#&gt; $ targets                     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 2, NA, 1, NA, 61, 6, NA, NA, 2, NA, NA, 70…</span></span>
-<span><span class="co">#&gt; $ qtr1                        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> NA, -14, NA, 1, NA, NA, 2, 8, NA, 357, 1, …</span></span>
-<span><span class="co">#&gt; $ qtr2                        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> NA, 11, NA, 1, NA, NA, NA, 28, NA, NA, 5, …</span></span>
-<span><span class="co">#&gt; $ qtr3                        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> NA, 7, NA, 2, NA, NA, NA, 15, NA, NA, NA, …</span></span>
-<span><span class="co">#&gt; $ qtr4                        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> NA, -7, NA, 1, NA, NA, 1, 14, NA, NA, NA, …</span></span>
-<span><span class="co">#&gt; $ cumulative                  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> NA, 7, NA, 1, NA, NA, 3, 65, NA, 357, NA, …</span></span>
-<span><span class="co">#&gt; $ safe_for_net_new            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "N", "Y", "N", "Y", "N", "N", "Y", "Y", "N…</span></span>
-<span><span class="co">#&gt; $ safe_for_vlc                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "N", "Y", "N", "Y", "N", "N", "Y", "Y", "N…</span></span>
-<span><span class="co">#&gt; $ source_name                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Derived", "Derived", "Derived", "DATIM", …</span></span></code></pre></div>
+<span><span class="co">#&gt; $ modality                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, "VCT", NA, "Inpat", NA, NA, "Index", "…</span></span>
+<span><span class="co">#&gt; $ target_modality_2024        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "N/A", "Other Facility", "N/A", "Other Fac…</span></span>
+<span><span class="co">#&gt; $ fiscal_year                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2059, 2059, 2061, 2060, 2061, 2060, 2059, …</span></span>
+<span><span class="co">#&gt; $ targets                     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> NA, 1, NA, NA, 71, NA, NA, 570, NA, 3, NA,…</span></span>
+<span><span class="co">#&gt; $ qtr1                        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1, 12, 192, 1, NA, 125, 1, 6, 1, NA, NA, N…</span></span>
+<span><span class="co">#&gt; $ qtr2                        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1, 10, 206, NA, NA, 132, 1, 12, 3, NA, 1, …</span></span>
+<span><span class="co">#&gt; $ qtr3                        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 3, 6, NA, 1, NA, 131, NA, 7, 2, NA, 1, NA,…</span></span>
+<span><span class="co">#&gt; $ qtr4                        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 3, NA, NA, NA, NA, 152, NA, 8, 1, NA, NA, …</span></span>
+<span><span class="co">#&gt; $ cumulative                  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 3, NA, 206, 2, NA, 152, 2, 33, 7, NA, 2, N…</span></span>
+<span><span class="co">#&gt; $ safe_for_net_new            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Y", "N", "Y", "Y", "N", "Y", "Y", "N", "Y…</span></span>
+<span><span class="co">#&gt; $ safe_for_vlc                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Y", "N", "Y", "Y", "N", "Y", "Y", "N", "Y…</span></span>
+<span><span class="co">#&gt; $ source_name                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "DATIM", "DATIM", "DATIM", "DATIM", "DATIM…</span></span></code></pre></div>
 <p>Also note that if you use the masked dataset, you can use
 <code><a href="https://usaid-oha-si.github.io/gophr/reference/get_metadata.html" class="external-link">gophr::get_metadata()</a></code>, specifying the path to the file and
 it will provide information about the masked dataset you can use in the
 caption for your plot or other documentation.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://usaid-oha-si.github.io/gophr/reference/get_metadata.html" class="external-link">get_metadata</a></span><span class="op">(</span><span class="va">download_folder</span>, <span class="st">"PSNU_IM"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> Latest file in <span style="color: #0000BB;">'file1a6f4f09e92'</span> matching <span style="color: #0000BB;">'PSNU_IM'</span>:</span></span>
-<span><span class="co">#&gt; <span style="color: #0000BB;">'MER_Structured_TRAINING_Datasets_PSNU_IM_FY59-61_20240215_v1_1.zip'</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> Latest file in <span style="color: #0000BB;">'file19356af38eb3'</span> matching <span style="color: #0000BB;">'PSNU_IM'</span>:</span></span>
+<span><span class="co">#&gt; <span style="color: #0000BB;">'MER_Structured_TRAINING_Datasets_PSNU_IM_FY59-61_20240517_v1_1.zip'</span></span></span>
 <span><span class="co">#&gt; Warning: <span style="color: #00BB00;">metadata</span> is NO LONGER (v3.2.3) exported by default as a global</span></span>
 <span><span class="co">#&gt; object.</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">ℹ</span> You must store the output as an object to use, e.g. <span style="color: #555555;">`meta &lt;-</span></span></span>
-<span><span class="co"><span style="color: #555555;">#&gt; get_metadata()`</span></span></span>
-<span></span>
+<span><span class="co"><span style="color: #555555;">#&gt; get_metadata()`</span></span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
 <span><span class="va">meta</span></span>
 <span><span class="co">#&gt; $curr_pd</span></span>
-<span><span class="co">#&gt; FY61Q1</span></span>
+<span><span class="co">#&gt; FY61Q2</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $curr_fy</span></span>
 <span><span class="co">#&gt; [1] 2061</span></span>
@@ -280,13 +285,13 @@ caption for your plot or other documentation.</p>
 <span><span class="co">#&gt; FY61</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $curr_qtr</span></span>
-<span><span class="co">#&gt; [1] 1</span></span>
+<span><span class="co">#&gt; [1] 2</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $source</span></span>
-<span><span class="co">#&gt; FY61Q1i Faux Training MSD</span></span>
+<span><span class="co">#&gt; FY61Q2i Faux Training MSD</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $caption</span></span>
-<span><span class="co">#&gt; Source: FY61Q1i Faux Training MSD</span></span></code></pre></div>
+<span><span class="co">#&gt; Source: FY61Q2i Faux Training MSD</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="manual">Manual<a class="anchor" aria-label="anchor" href="#manual"></a>
@@ -306,7 +311,7 @@ it as you normally would a MSD.</p>
 want to create a masked NAT_SUBNAT dataset, you can create your own if
 you have the full <a href="https://pepfar-panorama.org/forms/downloads/" class="external-link">MSD or NAT_SUBNAT
 dataset</a>.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co">#path to local NAT_SUBNAT dataset</span></span>
 <span><span class="va">subnat_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/glamr/man/si_path.html" class="external-link">si_path</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/glamr/man/return_latest.html" class="external-link">return_latest</a></span><span class="op">(</span><span class="st">"NAT_SUBNAT"</span><span class="op">)</span></span>
@@ -329,7 +334,7 @@ shapefiles that can be used for mapping.</p>
 <code>sf</code> dataframes that can be interacted with and plotted -
 <code>minoria_shp_ou</code>, <code>minoria_shp_snu1</code>,
 <code>minoria_shp_psnu</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">minoria_shp_psnu</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>geometry <span class="op">=</span> <span class="va">geometry</span>, fill <span class="op">=</span> <span class="va">snu1</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"white"</span>, linewidth <span class="op">=</span> <span class="fl">0.25</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">minoria_shp_ou</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>geometry <span class="op">=</span> <span class="va">geometry</span><span class="op">)</span>, fill <span class="op">=</span> <span class="cn">NA</span>, color <span class="op">=</span> <span class="st">"white"</span>, linewidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
@@ -374,7 +379,7 @@ them to start using them with your mapping software.</p>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
 </div>
 
       </footer>
