@@ -8,8 +8,6 @@ msk_import(filepath)
 }
 \arguments{
 \item{filepath}{path to a PSD file, either a PSNUxIM or NAT_SUBNAT}
-
-\item{call}{}
 }
 \value{
 df
