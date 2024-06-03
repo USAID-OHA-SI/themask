@@ -1,7 +1,6 @@
 #' Import PSD to mask
 #'
 #' @param filepath path to a PSD file, either a PSNUxIM or NAT_SUBNAT
-#' @param call
 #'
 #' @return df
 #' @keywords internal
