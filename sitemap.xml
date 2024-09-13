@@ -1,96 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/404.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/articles/accessing-data.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/index.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/gen_tag.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/milb.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/minoria_geo.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/minoria_mechs.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/minoria_shp_ou.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/minoria_shp_psnu.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/minoria_shp_snu1.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_available.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_create.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_download.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_export.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_filename.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_gen_uid.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_hierarchy.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_import.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_mech.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_mech_map.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_mech_pull.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_release.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_subset.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/msk_year.html</loc>
-  </url>
-  <url>
-    <loc>https://usaid-oha-si.github.io/themask/reference/pipe.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://usaid-oha-si.github.io/themask/404.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/LICENSE-text.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/LICENSE.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/articles/accessing-data.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/articles/index.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/authors.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/index.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/news/index.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/gen_tag.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/index.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/milb.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/minoria_geo.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/minoria_mechs.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/minoria_shp_ou.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/minoria_shp_psnu.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/minoria_shp_snu1.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_available.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_create.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_download.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_export.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_filename.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_gen_uid.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_hierarchy.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_import.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_mech.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_mech_map.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_mech_pull.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_release.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_subset.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/msk_year.html</loc></url>
+<url><loc>https://usaid-oha-si.github.io/themask/reference/pipe.html</loc></url>
 </urlset>
+
